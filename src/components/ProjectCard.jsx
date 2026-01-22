@@ -10,10 +10,13 @@ const ProjectCard = ({ image, title, description, category, onClick, delay = 0 }
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -8 }}
-      className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden cursor-pointer group shadow-2xl transition-all"
+      /* Añadimos 'flex flex-col h-full' para que la tarjeta ocupe todo el alto 
+         disponible en su celda de la grid.
+      */
+      className="flex flex-col h-full bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden cursor-pointer group shadow-2xl transition-all"
       onClick={onClick}
     >
-      <div className="relative overflow-hidden h-56">
+      <div className="relative overflow-hidden h-56 flex-shrink-0">
         <img
           src={image}
           alt={title}
@@ -27,12 +30,22 @@ const ProjectCard = ({ image, title, description, category, onClick, delay = 0 }
           </div>
         </div>
       </div>
-      <div className="p-6">
-        <span className="inline-block px-3 py-1 bg-blue-600/20 text-blue-400 text-xs font-semibold rounded-full mb-3 border border-blue-600/30">
+
+      {/* 'flex-grow' en este div hace que el contenido de texto se estire 
+          para empujar el final de todas las tarjetas al mismo nivel.
+      */}
+      <div className="p-6 flex flex-col flex-grow">
+        <span className="inline-block px-3 py-1 bg-blue-600/20 text-blue-400 text-xs font-semibold rounded-full mb-3 border border-blue-600/30 w-fit">
           {category}
         </span>
         <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-        <p className="text-blue-100/60 text-sm line-clamp-2 leading-relaxed">{description}</p>
+        
+        {/* 'line-clamp-3' es fundamental: asegura que todas las descripciones 
+            ocupen visualmente el mismo espacio (hasta 3 líneas).
+        */}
+        <p className="text-blue-100/60 text-sm line-clamp-3 leading-relaxed">
+          {description}
+        </p>
       </div>
     </motion.div>
   );

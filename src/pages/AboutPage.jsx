@@ -63,14 +63,21 @@ const AboutPage = () => {
 
   const education = [
     {
-      year: '2024',
+      year: '2026',
+      title: 'OPI 2025',
+      company: 'Franco Pisso',
+      description:
+        'Formación en comunicación asertiva, oratoria y liderazgo efectivo.',
+    },
+    {
+      year: '2026',
       title: 'Curso de Habilidades Blandas',
       company: 'Franco Pisso',
       description:
         'Formación en comunicación asertiva, oratoria y liderazgo efectivo.',
     },
     {
-      year: '2023',
+      year: '2026',
       title: 'Tecnicatura Universitaria en Programación',
       company: 'UTN',
       description:

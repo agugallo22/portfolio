@@ -14,29 +14,78 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      image: 'img/Proyectos/Laser-Tienda1.png', // Asegurate de tener la imagen en esta ruta
-      title: 'Laser Alarmas',
-      description: 'Desarrollo web corporativo y estrategia digital integral.',
-      fullDescription: 'Desarrollo de sitio web institucional para una empresa líder en seguridad. Se trabajó en la arquitectura de la información, optimización de velocidad y un diseño orientado a la conversión de leads.',
-      category: 'WordPress',
-      technologies: ['WordPress', 'WooCommerce', 'Elementor', 'SEO Optimization', 'Google Ads'],
-      results: 'Mejora notable en la visibilidad online y gestión de consultas directas.'
+      image: 'img/Proyectos/cargando-proyectos.jpg',
+      title: 'Cargando...',
+      description: 'Próximamente estarán todos mis proyectos acá.',
+      fullDescription: '',
+      category: '¡Estoy trabajando en esto!',
+      technologies: ['Próximamente...'],
+      results: [],
     },
     {
       id: 2,
-      image: 'img/Proyectos/cargando-proyectos.jpg', // Asegurate de tener la imagen en esta ruta
-      title: 'Ya casi...',
-      description: 'Próximamente estarán todos mis proyectos acá.',
-      fullDescription: '',
-      category: 'Working...',
-      technologies: ['Próximamente...'],
-      results: ''
-    }
+      image: 'img/Proyectos/laser-inicio.png',
+      title: 'Laser Alarmas',
+      description: 'Desarrollo web corporativo y estrategia digital integral.',
+      fullDescription:
+        'Desarrollo de sitio web institucional para una empresa líder en seguridad. Se trabajó en la arquitectura de la información, optimización de velocidad y un diseño orientado a la conversión de leads.',
+      category: 'WordPress',
+      technologies: [
+        'WordPress',
+        'WooCommerce',
+        'Elementor',
+        'SEO Optimization',
+        'Google Ads',
+      ],
+      link: 'https://laseralarmas.com',
+      images: [
+        'img/Proyectos/laser-catalogo.png',
+        'img/Proyectos/laser-contacto.png',
+        'img/Proyectos/laser-contacto-faq.png'
+      ],
+      results: [
+        '+5M acumulado en ventas a través de la tienda online.',
+        'Mejora notable en la visibilidad online.',
+        'Gestión eficiente de consultas directas.',
+        'Aumento en leads calificados.',
+      ],
+    },
+    {
+      id: 3,
+      image: 'img/Proyectos/gala-inicio.png',
+      title: 'Gala Bakery',
+      description:
+        'Desarrollo web responsive enfocado en maquetación profesional y validaciones.',
+      fullDescription:
+        'Proyecto centrado en las bases del desarrollo web moderno. El objetivo principal fue crear una interfaz profesional utilizando HTML5 y CSS3, potenciada por Bootstrap para garantizar un diseño 100% responsive. Se implementó lógica de JavaScript pura para la validación del formulario de pedidos y se integró una API externa de terceros, cumpliendo con los requisitos de promoción académica.',
+      category: 'Front-end',
+      technologies: [
+        'HTML5',
+        'CSS3',
+        'Bootstrap 5',
+        'JavaScript (ES6+)',
+        'API Integration',
+      ],
+      link: 'https://galabakery.hxgallo.com',
+      github: 'https://github.com/agugallo22/galabakery-frontend',
+      images: [
+        'img/Proyectos/gala-catalogo.png',
+        'img/Proyectos/gala-historia.png',
+        'img/Proyectos/gala-newsletter-faq.png',
+        'img/Proyectos/gala-pedidos.png',
+      ],
+      results: [
+        'Dominio de maquetación responsive con Bootstrap.',
+        'Implementación de validaciones de formularios en el lado del cliente.',
+        'Consumo de datos asíncronos mediante Fetch API.',
+      ],
+    },
   ];
 
-  const filteredProjects = selectedCategory === 'Todos'
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === 'Todos'
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -47,17 +96,23 @@ const ProjectsPage = () => {
     <div className="bg-[#050a30] min-h-screen text-white">
       <Helmet>
         <title>Proyectos - H.X GALLO</title>
-        <meta name="description" content="Portfolio de proyectos reales: Desarrollo web y estrategias de Social Media." />
+        <meta
+          name="description"
+          content="Portfolio de proyectos reales: Desarrollo web y estrategias de Social Media."
+        />
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 overflow-hidden text-center">
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-30"
-          style={{ backgroundImage: "url('img/Fondo azul con detalles.png')", backgroundSize: 'cover' }}
+          style={{
+            backgroundImage: "url('img/Fondo azul con detalles.png')",
+            backgroundSize: 'cover',
+          }}
         />
         <div className="relative z-10 container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -68,7 +123,7 @@ const ProjectsPage = () => {
             </h1>
             <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
           </motion.div>
-          
+
           <p className="text-xl text-blue-200/80 max-w-2xl mx-auto font-light italic">
             Soluciones digitales con resultados comprobables.
           </p>
@@ -101,7 +156,7 @@ const ProjectsPage = () => {
       {/* Projects Grid */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           >

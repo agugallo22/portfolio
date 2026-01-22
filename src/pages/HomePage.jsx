@@ -75,7 +75,7 @@ const HomePage = () => {
   return (
     <div className="bg-[#050a30] min-h-screen overflow-x-hidden">
       <Helmet>
-        <title>H.X GALLO - Portafolio</title>
+        <title>H.X GALLO</title>
       </Helmet>
 
       {/* Hero Section - Limpia y con fondo de color sólido */}
