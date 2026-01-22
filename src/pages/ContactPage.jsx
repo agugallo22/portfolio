@@ -133,8 +133,8 @@ const ContactPage = () => {
                   <ContactInfo
                     icon={Mail}
                     title="Email"
-                    value="hechoxgallo@gmail.com"
-                    link="mailto:hechoxgallo@gmail.com"
+                    value="contacto@hxgallo.com"
+                    link="mailto:contacto@hxgallo.com"
                   />
                   <ContactInfo
                     icon={Send}
