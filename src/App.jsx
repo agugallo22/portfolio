@@ -6,10 +6,14 @@ import HomePage from '@/pages/HomePage';
 import AboutPage from '@/pages/AboutPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ContactPage from '@/pages/ContactPage';
+import ScrollToTop from '@/components/ScrollToTop'; // Asegúrate de que la ruta sea correcta
 
 function App() {
   return (
     <Router>
+      {/* SOLUCIÓN AL SCROLL: Se coloca aquí para que afecte a todas las rutas */}
+      <ScrollToTop /> 
+      
       <Layout>
         <AnimatePresence mode="wait">
           <Routes>

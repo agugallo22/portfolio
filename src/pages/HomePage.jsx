@@ -2,7 +2,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Code, Palette, ShoppingCart, Layers, Share2, Video } from 'lucide-react';
+import {
+  Code,
+  Palette,
+  Layers,
+  Share2,
+  Video,
+  Star,
+  ChevronDown,
+} from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
 
 const HomePage = () => {
@@ -10,177 +18,190 @@ const HomePage = () => {
     {
       icon: Code,
       title: 'WordPress Developer',
-      description: 'Desarrollo de sitios web personalizados en WordPress con diseño profesional y funcionalidad avanzada.'
+      description:
+        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
     },
     {
       icon: Palette,
       title: 'Front-end Developer',
-      description: 'Interfaces de usuario modernas y responsivas con React, TailwindCSS y las últimas tecnologías web.'
+      description:
+        'Interfaces de usuario modernas y responsivas con React y TailwindCSS.',
     },
     {
       icon: Layers,
       title: 'Back-end Developer',
-      description: 'Desarrollo de APIs robustas y bases de datos eficientes para aplicaciones web escalables.'
+      description: 'Desarrollo de APIs robustas y bases de datos eficientes.',
     },
     {
       icon: Code,
       title: 'FullStack Developer',
-      description: 'Soluciones completas desde el front-end hasta el back-end, creando aplicaciones web integrales.'
+      description: 'Soluciones completas desde el front-end hasta el back-end.',
     },
     {
       icon: Share2,
       title: 'Social Media Manager',
-      description: 'Gestión profesional de redes sociales, creación de contenido y estrategias de marketing digital.'
+      description:
+        'Gestión profesional de redes sociales y estrategias de contenido.',
     },
     {
       icon: Video,
       title: 'Video Editor',
-      description: 'Edición de video profesional para contenido de redes sociales, publicidad y presentaciones.'
-    }
+      description:
+        'Edición de video profesional para contenido de redes y publicidad.',
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Gastón Scarafia',
+      company: 'Laser Alarmas',
+      image: 'img/hombre1.jpg',
+      text: 'Agustín transformó nuestra presencia digital. El desarrollo web que realizó para Laser Alarmas superó nuestras expectativas, logrando un sitio rápido, seguro y muy profesional.',
+    },
+    {
+      name: 'Ivana García',
+      company: 'La Copia',
+      image: 'img/mujer1.avif',
+      text: 'Excelente gestión de nuestro Instagram. El enfoque en tendencias de Reels y la gestión de consultas han incrementado notablemente nuestra comunidad y el compromiso de los seguidores.',
+    },
+    {
+      name: 'César Flores',
+      company: 'Pedify',
+      image: 'img/hombre2.jpg',
+      text: 'La estrategia de marketing y pauta digital que está llevando adelante ha sido clave para nuestro crecimiento. Entiende perfectamente nuestro mercado y optimiza cada inversión.',
+    },
   ];
 
   return (
-    <>
+    <div className="bg-[#050a30] min-h-screen overflow-x-hidden">
       <Helmet>
-        <title>H.X GALLO - Desarrollador Web & Social Media Manager</title>
-        <meta name="description" content="Transformo ideas en soluciones digitales profesionales. Desarrollo WordPress, E-commerce, Front-end, Back-end y gestión de redes sociales." />
+        <title>H.X GALLO - Portafolio</title>
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1590085327097-cf67e44baab3)',
+            backgroundImage: "url('img/Fondo azul con detalles.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-purple-700/40 to-transparent" />
+          <div className="absolute inset-0 bg-[#050a30]/50 backdrop-blur-[2px]" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col items-center w-full"
           >
-            <h1 className="text-5xl md:text-7xl text-white mb-6 font-bold">
-              <span style={{ fontFamily: 'Montserrat Arabic', fontWeight: 400 }}>H.X</span>{' '}
-              <span style={{ fontFamily: 'Montserrat', fontWeight: 900 }}>GALLO</span>
-            </h1>
-            <p className="text-2xl md:text-3xl text-white font-semibold mb-4">
+            <motion.img
+              src="img/logo.svg"
+              alt="H.X GALLO"
+              className="h-28 md:h-40 mb-10"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            />
+
+            <p className="text-xl md:text-3xl text-blue-200 mb-12 font-light tracking-wide max-w-3xl">
               Desarrollador Web & Social Media Manager
             </p>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Transformo ideas en soluciones digitales profesionales
-            </p>
+
             <Link
               to="/proyectos"
-              className="inline-block bg-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-700 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="inline-block bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#050a30] transition-all duration-500"
             >
               Ver mis proyectos
             </Link>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/50 pointer-events-none"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+            className="flex flex-col items-center"
+          >
+            <ChevronDown size={32} strokeWidth={1} />
+            <ChevronDown size={32} strokeWidth={1} className="-mt-5" />
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="section-title text-gray-900">Servicios</h2>
-            <p className="section-subtitle">Soluciones digitales completas para tu negocio</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Services Section - Con bordes redondeados arriba */}
+      <section className="relative py-32 bg-white rounded-t-[3.5rem] -mt-1 z-10 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 opacity-40"
+          style={{
+            backgroundImage: "url('img/Fondo blanco con detalles.png')",
+            backgroundSize: 'cover',
+          }}
+        />
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-[#050a30] mb-4">
+              Servicios Profesionales
+            </h2>
+            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                delay={index * 0.1}
-              />
+              <ServiceCard key={index} {...service} delay={index * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="section-title text-gray-900">Clientes satisfechos</h2>
-            <p className="section-subtitle">Testimonios de quienes confiaron en mi trabajo</p>
-          </motion.div>
-
+      {/* Testimonials Section - Con bordes redondeados arriba */}
+      <section className="py-24 bg-[#050a30] rounded-t-[3.5rem] relative z-20 -mt-10 lg:-mt-14">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-16">
+            Clientes satisfechos
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item, index) => (
+            {testimonials.map((t, index) => (
               <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card p-8"
+                key={index}
+                className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-xl">C{item}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">Cliente {item}</h3>
-                    <p className="text-gray-600 text-sm">Empresa {item}</p>
-                  </div>
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-blue-500/50 shadow-xl bg-gray-800">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  "Excelente profesional, entregó el proyecto a tiempo y superó nuestras expectativas. Altamente recomendado."
+                <div className="flex gap-1 justify-center mb-4 text-blue-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-blue-100/70 mb-8 italic text-sm leading-relaxed min-h-[80px]">
+                  "{t.text}"
                 </p>
+                <div className="text-center">
+                  <h4 className="font-bold text-white text-base">{t.name}</h4>
+                  <p className="text-blue-400 text-sm font-medium">
+                    {t.company}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 to-purple-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              ¿Listo para iniciar tu proyecto?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos digitales
-            </p>
-            <Link
-              to="/contacto"
-              className="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-2xl hover:scale-105"
-            >
-              Contáctame ahora
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 };
 

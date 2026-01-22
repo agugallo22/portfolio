@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 import ProjectModal from '@/components/ProjectModal';
 
@@ -9,68 +9,28 @@ const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const categories = ['Todos', 'WordPress', 'E-commerce', 'Social Media', 'Front-end'];
+  const categories = ['Todos', 'WordPress', 'Social Media', 'Front-end'];
 
   const projects = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1687006067259-6de13ca3875e',
-      title: 'E-commerce de Moda',
-      description: 'Tienda online completa con sistema de pagos integrado y gestión de inventario.',
-      fullDescription: 'Desarrollo de e-commerce completo en WordPress con WooCommerce, integración con pasarelas de pago, sistema de gestión de inventario y panel de administración personalizado.',
-      category: 'E-commerce',
-      technologies: ['WordPress', 'WooCommerce', 'PHP', 'JavaScript', 'CSS'],
-      results: 'Aumento del 150% en ventas online durante los primeros 6 meses.'
+      image: 'img/Proyectos/Laser-Tienda1.png', // Asegurate de tener la imagen en esta ruta
+      title: 'Laser Alarmas',
+      description: 'Desarrollo web corporativo y estrategia digital integral.',
+      fullDescription: 'Desarrollo de sitio web institucional para una empresa líder en seguridad. Se trabajó en la arquitectura de la información, optimización de velocidad y un diseño orientado a la conversión de leads.',
+      category: 'WordPress',
+      technologies: ['WordPress', 'WooCommerce', 'Elementor', 'SEO Optimization', 'Google Ads'],
+      results: 'Mejora notable en la visibilidad online y gestión de consultas directas.'
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-      title: 'Sitio Corporativo',
-      description: 'Página web profesional para empresa de servicios con diseño moderno y responsive.',
-      fullDescription: 'Diseño y desarrollo de sitio web corporativo en WordPress con diseño personalizado, optimización SEO y formularios de contacto avanzados.',
-      category: 'WordPress',
-      technologies: ['WordPress', 'Elementor', 'CSS', 'JavaScript'],
-      results: 'Mejora del 200% en leads generados mensualmente.'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113',
-      title: 'Campaña Social Media',
-      description: 'Estrategia completa de contenido para marca de lifestyle en Instagram y Facebook.',
-      fullDescription: 'Gestión integral de redes sociales, creación de contenido visual, planificación mensual y manejo de pauta publicitaria en Meta ADS.',
+      image: 'img/proyectos/pelumaster.jpg', // Asegurate de tener la imagen en esta ruta
+      title: 'PeluMaster',
+      description: 'Gestión de redes sociales y creación de contenido visual.',
+      fullDescription: 'Manejo integral de la comunidad digital, enfocándose en la estética visual y la interacción con los clientes para potenciar la marca personal del salón.',
       category: 'Social Media',
-      technologies: ['Canva', 'Adobe Photoshop', 'Meta Business Suite', 'Hootsuite'],
-      results: 'Crecimiento de 300% en seguidores y aumento del 250% en engagement.'
-    },
-    {
-      id: 4,
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0',
-      title: 'Dashboard Administrativo',
-      description: 'Panel de administración interactivo desarrollado con React y TailwindCSS.',
-      fullDescription: 'Aplicación web moderna desarrollada con React, gestión de estado con Context API, diseño responsive con TailwindCSS.',
-      category: 'Front-end',
-      technologies: ['React', 'TailwindCSS', 'JavaScript', 'Framer Motion'],
-      results: 'Reducción del 40% en tiempo de gestión administrativa.'
-    },
-    {
-      id: 5,
-      image: 'https://images.unsplash.com/photo-1557426272-fc759fdf7a8d',
-      title: 'Blog Personal',
-      description: 'Blog minimalista con sistema de comentarios y newsletter integrado.',
-      fullDescription: 'Desarrollo de blog en WordPress con diseño minimalista, optimización de velocidad, integración con Mailchimp y sistema de comentarios.',
-      category: 'WordPress',
-      technologies: ['WordPress', 'PHP', 'MySQL', 'Mailchimp API'],
-      results: 'Más de 10,000 visitantes mensuales en los primeros 3 meses.'
-    },
-    {
-      id: 6,
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3',
-      title: 'E-commerce de Tecnología',
-      description: 'Tienda online especializada en productos tecnológicos con comparador de precios.',
-      fullDescription: 'Desarrollo de e-commerce avanzado con sistema de comparación de productos, filtros inteligentes y recomendaciones personalizadas.',
-      category: 'E-commerce',
-      technologies: ['WordPress', 'WooCommerce', 'JavaScript', 'API REST'],
-      results: 'Tasa de conversión del 4.5%, superior al promedio de la industria.'
+      technologies: ['Instagram Strategy', 'Video Editing', 'Canva', 'Meta ADS'],
+      results: 'Incremento en el engagement y fidelización de la clientela a través de contenido dinámico.'
     }
   ];
 
@@ -84,32 +44,40 @@ const ProjectsPage = () => {
   };
 
   return (
-    <>
+    <div className="bg-[#050a30] min-h-screen text-white">
       <Helmet>
-        <title>Proyectos - H.X GALLO | Portfolio de Desarrollo Web y Social Media</title>
-        <meta name="description" content="Explora mi portfolio de proyectos: WordPress sites, e-commerces, campañas de social media y aplicaciones web. Resultados comprobables y clientes satisfechos." />
+        <title>Proyectos - H.X GALLO</title>
+        <meta name="description" content="Portfolio de proyectos reales: Desarrollo web y estrategias de Social Media." />
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      <section className="relative pt-40 pb-20 overflow-hidden text-center">
+        <div 
+          className="absolute inset-0 z-0 opacity-30"
+          style={{ backgroundImage: "url('img/Fondo azul con detalles.png')", backgroundSize: 'cover' }}
+        />
+        <div className="relative z-10 container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+            transition={{ duration: 1 }}
+            className="text-center mb-12"
           >
-            <h1 className="section-title text-gray-900">Mis proyectos</h1>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              Descubre algunos de los trabajos que he realizado para clientes satisfechos
-            </p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+              Mis Proyectos
+            </h1>
+            <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
           </motion.div>
+          
+          <p className="text-xl text-blue-200/80 max-w-2xl mx-auto font-light italic">
+            Soluciones digitales con resultados comprobables.
+          </p>
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="py-8 bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Filters Section con estilo Liquid Glass */}
+      <section className="sticky top-20 z-30 py-6 bg-[#050a30]/60 backdrop-blur-xl border-y border-white/10">
+        <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <motion.button
@@ -117,10 +85,10 @@ const ProjectsPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
                   selectedCategory === category
-                    ? 'bg-purple-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-blue-600 border-blue-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
+                    : 'bg-white/5 border-white/10 text-blue-200/70 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {category}
@@ -131,30 +99,39 @@ const ProjectsPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                image={project.image}
-                title={project.title}
-                description={project.description}
-                category={project.category}
-                onClick={() => handleProjectClick(project)}
-                delay={index * 0.1}
-              />
-            ))}
-          </div>
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          >
+            <AnimatePresence>
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <ProjectCard
+                    {...project}
+                    onClick={() => handleProjectClick(project)}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
 
           {filteredProjects.length === 0 && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-16"
+              className="text-center py-24"
             >
-              <p className="text-gray-600 text-lg">
-                No se encontraron proyectos en esta categoría.
+              <p className="text-blue-200/50 text-xl font-light">
+                Próximamente más proyectos en esta categoría...
               </p>
             </motion.div>
           )}
@@ -167,7 +144,7 @@ const ProjectsPage = () => {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
-    </>
+    </div>
   );
 };
 
