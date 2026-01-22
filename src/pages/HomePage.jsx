@@ -15,40 +15,12 @@ import ServiceCard from '@/components/ServiceCard';
 
 const HomePage = () => {
   const services = [
-    {
-      icon: Code,
-      title: 'WordPress Developer',
-      description:
-        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
-    },
-    {
-      icon: Palette,
-      title: 'Front-end Developer',
-      description:
-        'Interfaces de usuario modernas y responsivas con React y TailwindCSS.',
-    },
-    {
-      icon: Layers,
-      title: 'Back-end Developer',
-      description: 'Desarrollo de APIs robustas y bases de datos eficientes.',
-    },
-    {
-      icon: Code,
-      title: 'FullStack Developer',
-      description: 'Soluciones completas desde el front-end hasta el back-end.',
-    },
-    {
-      icon: Share2,
-      title: 'Social Media Manager',
-      description:
-        'Gestión profesional de redes sociales y estrategias de contenido.',
-    },
-    {
-      icon: Video,
-      title: 'Video Editor',
-      description:
-        'Edición de video profesional para contenido de redes y publicidad.',
-    },
+    { icon: Code, title: 'WordPress Developer', description: 'Desarrollo de sitios web personalizados en WordPress con diseño profesional.' },
+    { icon: Palette, title: 'Front-end Developer', description: 'Interfaces de usuario modernas y responsivas con React y TailwindCSS.' },
+    { icon: Layers, title: 'Back-end Developer', description: 'Desarrollo de APIs robustas y bases de datos eficientes.' },
+    { icon: Code, title: 'FullStack Developer', description: 'Soluciones completas desde el front-end hasta el back-end.' },
+    { icon: Share2, title: 'Social Media Manager', description: 'Gestión profesional de redes sociales y estrategias de contenido.' },
+    { icon: Video, title: 'Video Editor', description: 'Edición de video profesional para contenido de redes y publicidad.' },
   ];
 
   const testimonials = [
@@ -78,19 +50,8 @@ const HomePage = () => {
         <title>H.X GALLO - Portafolio</title>
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/img/Fondo azul con detalles.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className="absolute inset-0 bg-[#050a30]/50 backdrop-blur-[2px]" />
-        </div>
-
+      {/* Hero Section - Limpia y con fondo de color sólido */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050a30]">
         <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,12 +98,12 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* Services Section - Con bordes redondeados arriba */}
+      {/* Services Section */}
       <section className="relative py-32 bg-white rounded-t-[3.5rem] -mt-1 z-10 overflow-hidden">
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: "url('/img/Fondo blanco con detalles.png')",
+            backgroundImage: "url('/img/fondo-blanco.jpg')", // Nombre normalizado
             backgroundSize: 'cover',
           }}
         />
@@ -161,7 +122,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Con bordes redondeados arriba */}
+      {/* Testimonials Section */}
       <section className="py-24 bg-[#050a30] rounded-t-[3.5rem] relative z-20 -mt-10 lg:-mt-14">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-16">
@@ -180,6 +141,7 @@ const HomePage = () => {
                     src={t.image}
                     alt={t.name}
                     className="w-full h-full object-cover"
+                    onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }} // Fallback por si falla la ruta
                   />
                 </div>
                 <div className="flex gap-1 justify-center mb-4 text-blue-400">
