@@ -55,19 +55,19 @@ const HomePage = () => {
     {
       name: 'Gastón Scarafia',
       company: 'Laser Alarmas',
-      image: 'img/hombre1.jpg',
+      image: '/img/hombre1.jpg',
       text: 'Agustín transformó nuestra presencia digital. El desarrollo web que realizó para Laser Alarmas superó nuestras expectativas, logrando un sitio rápido, seguro y muy profesional.',
     },
     {
       name: 'Ivana García',
       company: 'La Copia',
-      image: 'img/mujer1.avif',
+      image: '/img/mujer1.avif',
       text: 'Excelente gestión de nuestro Instagram. El enfoque en tendencias de Reels y la gestión de consultas han incrementado notablemente nuestra comunidad y el compromiso de los seguidores.',
     },
     {
       name: 'César Flores',
       company: 'Pedify',
-      image: 'img/hombre2.jpg',
+      image: '/img/hombre2.jpg',
       text: 'La estrategia de marketing y pauta digital que está llevando adelante ha sido clave para nuestro crecimiento. Entiende perfectamente nuestro mercado y optimiza cada inversión.',
     },
   ];
@@ -83,7 +83,7 @@ const HomePage = () => {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('img/Fondo azul con detalles.png')",
+            backgroundImage: "url('/img/Fondo azul con detalles.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -99,7 +99,7 @@ const HomePage = () => {
             className="flex flex-col items-center w-full"
           >
             <motion.img
-              src="img/logo.svg"
+              src="/img/logo.svg"
               alt="H.X GALLO"
               className="h-28 md:h-40 mb-10"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -142,7 +142,7 @@ const HomePage = () => {
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: "url('img/Fondo blanco con detalles.png')",
+            backgroundImage: "url('/img/Fondo blanco con detalles.png')",
             backgroundSize: 'cover',
           }}
         />

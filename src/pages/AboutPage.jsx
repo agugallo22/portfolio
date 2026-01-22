@@ -89,7 +89,7 @@ const AboutPage = () => {
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: "url('img/Fondo azul con detalles.png')",
+            backgroundImage: "url('/img/Fondo azul con detalles.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -134,7 +134,7 @@ const AboutPage = () => {
                   {!showName ? (
                     <motion.img
                       key="logo"
-                      src="img/logo.svg"
+                      src="/img/logo.svg"
                       alt="H.X GALLO"
                       className="h-10 md:h-14"
                       initial={{ opacity: 0, filter: 'blur(10px)' }}
@@ -194,7 +194,7 @@ const AboutPage = () => {
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: "url('img/Fondo blanco con detalle 2.jpg')",
+            backgroundImage: "url('/img/Fondo blanco con detalle 2.jpg')",
             backgroundSize: 'cover',
           }}
         />
