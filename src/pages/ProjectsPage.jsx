@@ -24,13 +24,13 @@ const ProjectsPage = () => {
     },
     {
       id: 2,
-      image: 'img/proyectos/pelumaster.jpg', // Asegurate de tener la imagen en esta ruta
-      title: 'PeluMaster',
-      description: 'Gestión de redes sociales y creación de contenido visual.',
-      fullDescription: 'Manejo integral de la comunidad digital, enfocándose en la estética visual y la interacción con los clientes para potenciar la marca personal del salón.',
-      category: 'Social Media',
-      technologies: ['Instagram Strategy', 'Video Editing', 'Canva', 'Meta ADS'],
-      results: 'Incremento en el engagement y fidelización de la clientela a través de contenido dinámico.'
+      image: 'img/Proyectos/cargando-proyectos.jpg', // Asegurate de tener la imagen en esta ruta
+      title: 'Ya casi...',
+      description: 'Próximamente estarán todos mis proyectos acá.',
+      fullDescription: '',
+      category: 'Working...',
+      technologies: ['Próximamente...'],
+      results: ''
     }
   ];
 
