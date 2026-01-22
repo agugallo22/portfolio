@@ -60,7 +60,7 @@ const HomePage = () => {
             className="flex flex-col items-center w-full"
           >
             <motion.img
-              src="/img/logo.png"
+              src="/img/logo.svg"
               alt="H.X GALLO"
               className="h-28 md:h-40 mb-10"
               initial={{ opacity: 0, scale: 0.9 }}
