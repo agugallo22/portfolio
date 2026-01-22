@@ -15,12 +15,40 @@ import ServiceCard from '@/components/ServiceCard';
 
 const HomePage = () => {
   const services = [
-    { icon: Code, title: 'WordPress Developer', description: 'Desarrollo de sitios web personalizados en WordPress con diseño profesional.' },
-    { icon: Palette, title: 'Front-end Developer', description: 'Interfaces de usuario modernas y responsivas con React y TailwindCSS.' },
-    { icon: Layers, title: 'Back-end Developer', description: 'Desarrollo de APIs robustas y bases de datos eficientes.' },
-    { icon: Code, title: 'FullStack Developer', description: 'Soluciones completas desde el front-end hasta el back-end.' },
-    { icon: Share2, title: 'Social Media Manager', description: 'Gestión profesional de redes sociales y estrategias de contenido.' },
-    { icon: Video, title: 'Video Editor', description: 'Edición de video profesional para contenido de redes y publicidad.' },
+    {
+      icon: Code,
+      title: 'WordPress Developer',
+      description:
+        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
+    },
+    {
+      icon: Palette,
+      title: 'Front-end Developer',
+      description:
+        'Interfaces de usuario modernas y responsivas con React y TailwindCSS.',
+    },
+    {
+      icon: Layers,
+      title: 'Back-end Developer',
+      description: 'Desarrollo de APIs robustas y bases de datos eficientes.',
+    },
+    {
+      icon: Code,
+      title: 'FullStack Developer',
+      description: 'Soluciones completas desde el front-end hasta el back-end.',
+    },
+    {
+      icon: Share2,
+      title: 'Social Media Manager',
+      description:
+        'Gestión profesional de redes sociales y estrategias de contenido.',
+    },
+    {
+      icon: Video,
+      title: 'Video Editor',
+      description:
+        'Edición de video profesional para contenido de redes y publicidad.',
+    },
   ];
 
   const testimonials = [
@@ -60,9 +88,9 @@ const HomePage = () => {
             className="flex flex-col items-center w-full"
           >
             <motion.img
-              src="/img/logo.svg"
+              src="/img/logo.png"
               alt="H.X GALLO"
-              className="h-28 md:h-40 mb-10"
+              className="h-auto w-[90vw] max-w-[500px] md:max-w-none md:w-[1200px] mb-10 object-contain"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -141,7 +169,9 @@ const HomePage = () => {
                     src={t.image}
                     alt={t.name}
                     className="w-full h-full object-cover"
-                    onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }} // Fallback por si falla la ruta
+                    onError={(e) => {
+                      e.target.src = 'https://via.placeholder.com/150';
+                    }} // Fallback por si falla la ruta
                   />
                 </div>
                 <div className="flex gap-1 justify-center mb-4 text-blue-400">

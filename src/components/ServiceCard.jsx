@@ -1,7 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, delay = 0 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/proyectos');
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -18,6 +25,7 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0 }) => {
         scale: 1.02,
         transition: { duration: 0.2, delay: 0 } 
       }}
+      onClick={handleClick}
       className="relative p-8 rounded-[2.5rem] bg-white/10 backdrop-blur-2xl 
                  border border-white/40 
                  shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] 

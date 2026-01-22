@@ -25,7 +25,7 @@ const Navigation = () => {
             <img 
               src="img/logo.png" 
               alt="H.X GALLO" 
-              className="h-7 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]" 
+              className="h-5 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]" 
             />
           </Link>
 
