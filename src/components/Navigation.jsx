@@ -23,7 +23,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center">
             <img 
-              src="img/logo.png" 
+              src="img/logo.svg" 
               alt="H.X GALLO" 
               className="h-5 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]" 
             />
