@@ -9,7 +9,9 @@ const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const categories = ['Todos', 'WordPress', 'Social Media', 'Front-end'];
+  const categories = ['Todos', 'WordPress', 'Social Media', 'Full Stack', 'Front-end', 'Back-end', 'Analytics'];
+
+  // Datos de proyectos
 
   const projects = [
     {
@@ -22,32 +24,39 @@ const ProjectsPage = () => {
       technologies: ['Próximamente...'],
       results: [],
     },
-    {
+   {
       id: 2,
       image: 'img/Proyectos/laser-inicio.png',
       title: 'Laser Alarmas',
-      description: 'Desarrollo web corporativo y estrategia digital integral.',
+      description: 'E-commerce corporativo de alta conversión y estrategia digital integral.',
       fullDescription:
-        'Desarrollo de sitio web institucional para una empresa líder en seguridad. Se trabajó en la arquitectura de la información, optimización de velocidad y un diseño orientado a la conversión de leads.',
+        'Desarrollo de un ecosistema e-commerce completo para una empresa líder en seguridad. El proyecto abarcó desde la arquitectura de la información y la implementación de una tienda online robusta hasta la integración de sistemas logísticos y de pago automatizados, optimizando la experiencia de usuario y la conversión de leads.',
       category: 'WordPress',
       technologies: [
         'WordPress',
         'WooCommerce',
-        'Elementor',
-        'SEO Optimization',
-        'Google Ads',
+        'Elementor Pro',
+        'Custom Checkout Optimization',
+        'SEO Avanzado',
+        'Google Ads Strategy',
+        'SSL & Security Hardening',
       ],
       link: 'https://laseralarmas.com',
       images: [
         'img/Proyectos/laser-catalogo.png',
         'img/Proyectos/laser-contacto.png',
-        'img/Proyectos/laser-contacto-faq.png'
+        'img/Proyectos/laser-contacto-faq.png',
+        'img/Proyectos/laser-faq-footer.png',
+        'img/Proyectos/laser-producto.png'
       ],
       results: [
-        '+5M acumulado en ventas a través de la tienda online.',
-        'Mejora notable en la visibilidad online.',
-        'Gestión eficiente de consultas directas.',
-        'Aumento en leads calificados.',
+        'Integración avanzada de Pasarelas de Pago (Mercado Pago/Tarjetas).',
+        'Implementación de logística de Envíos automatizada con cálculo de costos en tiempo real.',
+        'Catálogos dinámicos optimizados para carga rápida y navegación intuitiva.',
+        'Panel de Vista de Administrador personalizado para actualización de precios, gestión de stock y pedidos.',
+        '+5M acumulado en ventas directas a través de la tienda online.',
+        'Optimización Core Web Vitals para mejorar el posicionamiento en buscadores (SEO).',
+        'Configuración de embudos de conversión vinculados a campañas de Google Ads.',
       ],
     },
     {
@@ -80,13 +89,96 @@ const ProjectsPage = () => {
         'Consumo de datos asíncronos mediante Fetch API.',
       ],
     },
+    {
+      id: 4, 
+      image: 'img/Proyectos/mvc-inicio.png',
+      title: 'Sistema de Gestión de Despachos',
+      description: 'Sistema integral de logística y control de stock desarrollado en ASP.NET Core MVC.',
+      fullDescription:
+        'Proyecto integrador para la materia Programación III. Se desarrolló una solución robusta para la gestión de despachos de mercadería, integrando un sistema de inventario dinámico, administración de clientes y un esquema de seguridad basado en roles de usuario.',
+      category: 'Back-end',
+      technologies: [
+        '.NET Core MVC',
+        'Entity Framework',
+        'SQL Server',
+        'LINQ',
+        'Razor Pages',
+        'Session Management',
+        'Custom Filters',
+      ],
+      github: 'https://github.com/agugallo22/sistemadespacho-entity-mvc',
+      images: [
+        'img/Proyectos/mvc-der.png',
+        'img/Proyectos/mvc-uml.png',
+        'img/Proyectos/mvc-codigo.png'
+      ],
+      results: [
+        'Implementación de ABM completo para Clientes, Direcciones y Productos con validaciones del lado del servidor.',
+        'Desarrollo de lógica de Control de Stock automatizada al confirmar pedidos de despacho.',
+        'Sistema de autenticación y autorización personalizado mediante filtros de acción (FiltroAutorizacion).',
+        'Gestión de roles diferenciados para Administradores y Usuarios con restricciones de acceso granulares.',
+        'Arquitectura de datos optimizada utilizando Entity Framework y consultas LINQ eficientes.',
+      ],
+    },
+    {
+      id: 5,
+      image: 'img/Proyectos/MovilizApp/3.jpg',
+      title: 'Análisis de Datos: MovilizApp',
+      description: 'Optimización de movilidad urbana mediante análisis predictivo y visualización de datos.',
+      fullDescription:
+        'Proyecto de análisis de datos centrado en la eficiencia del transporte. Se procesaron grandes conjuntos de datos para identificar cuellos de botella en la movilidad urbana, utilizando técnicas estadísticas y herramientas de visualización para transformar datos crudos en decisiones estratégicas. El enfoque principal fue la detección de patrones de demanda y la optimización de rutas.',
+      category: 'Analytics',
+      technologies: [
+        'Python',
+        'Pandas / NumPy',
+        'K-Means Clustering',
+        'Seaborn / Matplotlib',
+        'Google Colab',
+        'Data Cleaning & Engineering',
+      ],
+      github: 'https://github.com/agugallo22/movilizap',
+      images: [
+        'img/Proyectos/MovilizApp/4.jpg',
+        'img/Proyectos/MovilizApp/14.jpg',
+        'img/Proyectos/MovilizApp/10.jpg',
+        'img/Proyectos/MovilizApp/11.jpg',
+        'img/Proyectos/MovilizApp/14.jpg',
+        'img/Proyectos/MovilizApp/16.jpg',
+        'img/Proyectos/MovilizApp/19.jpg',
+        'img/Proyectos/MovilizApp/27.jpg',
+        'img/Proyectos/MovilizApp/29.jpg',
+        'img/Proyectos/MovilizApp/32.jpg',
+        'img/Proyectos/MovilizApp/31.jpg',
+        'img/Proyectos/MovilizApp/34.jpg',
+        'img/Proyectos/MovilizApp/35.jpg',
+
+      ],
+      results: [
+        'Identificación de "Zonas Rojas" de sobre-oferta mediante Tasa de Inactividad Estimada (TIE).',
+        'Implementación de modelo K-Means para segmentar ineficiencias estructurales y fallas de asignación.',
+        'Procesamiento de datasets diversos (CSV, XLSX, JSON) garantizando la unicidad e integridad de datos.',
+        'Propuesta de estrategias tácticas como Bonos de Dispersión para optimizar la rentabilidad del conductor.',
+      ],
+    },
   ];
 
-  const filteredProjects =
-    selectedCategory === 'Todos'
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+  // Filtrado de proyectos según categoría seleccionada
+  const filteredProjects = projects.filter((project) => {
+    if (selectedCategory === 'Todos') return true;
 
+    // Si seleccionamos Full-stack, mostramos TODO lo relacionado a desarrollo puro
+    if (selectedCategory === 'Full Stack') {
+      return (
+        project.category === 'Full Stack' || 
+        project.category === 'Front-end' || 
+        project.category === 'Back-end'
+      );
+    }
+    
+
+    // Filtro estándar para el resto (WordPress, Social Media, etc.)
+    return project.category === selectedCategory;
+  });
   const handleProjectClick = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
