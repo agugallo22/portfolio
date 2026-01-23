@@ -88,7 +88,7 @@ const HomePage = () => {
             className="flex flex-col items-center w-full"
           >
             <motion.img
-              src="/img/logo.svg"
+              src="/img/logo.png"
               alt="H.X GALLO"
               className="h-auto w-[90vw] max-w-[500px] md:max-w-none md:w-[1200px] mb-10 object-contain"
               initial={{ opacity: 0, scale: 0.9 }}
