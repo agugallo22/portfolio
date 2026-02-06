@@ -282,26 +282,29 @@ const AboutPage = () => {
               <div className="space-y-4 text-blue-100/90 leading-relaxed font-light text-base md:text-lg text-left">
                 <p>
                   Actualmente estoy esperando la fecha de presentación para
-                  defender mi trabajo final recibirme en la{' '}
+                  defender mi trabajo final y recibirme en la{' '}
                   <strong className="text-white">
                     Tecnicatura Universitaria en Programación
                   </strong>{' '}
-                  de la UTN. Cuento con formación técnica avanzada y enfoque
+                  de la
+                  {' '} <strong className="text-white">
+                    UTN
+                  </strong>. Cuento con formación técnica avanzada y enfoque
                   humano, habiendo realizado cursos de habilidades blandas y
                   oratoria.
                 </p>
                 <p>
                   Desde 2020 trabajo en el mundo de las redes sociales como{' '}
-                  <strong className="text-white">Community Manager</strong>,
-                  habiendo comenzado en el mundo de los deportes electrónicos y
-                  expandiéndome a diversos rubros como gastronomía, librerías y
-                  SaaS.
+                  <strong className="text-white">Community Manager</strong>. Comencé
+                  en el mundo de los deportes electrónicos y luego me expandí
+                  a diversos rubros como gastronomía, librerías,
+                  SaaS, etc.
                 </p>
                 <p>
                   Además, desarrollo sitios web y tiendas online en{' '}
                   <strong className="text-white">WordPress</strong> como
-                  freelance, ayudando a emprendedores y pequeñas empresas a
-                  establecer su presencia digital.
+                  freelance, y tengo un emprendimiento personal de un Beer Truck como se ve en la imagen llamado{' '}
+                  <strong className="text-white">BIK - Beer In Kombi</strong>.
                 </p>
               </div>
             </motion.div>
