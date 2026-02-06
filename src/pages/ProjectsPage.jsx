@@ -37,9 +37,8 @@ const ProjectsPage = () => {
         'WooCommerce',
         'Elementor Pro',
         'Custom Checkout Optimization',
-        'SEO Avanzado',
+        'SEO',
         'Google Ads Strategy',
-        'SSL & Security Hardening',
       ],
       link: 'https://laseralarmas.com',
       images: [
@@ -54,9 +53,7 @@ const ProjectsPage = () => {
         'Implementación de logística de Envíos automatizada con cálculo de costos en tiempo real.',
         'Catálogos dinámicos optimizados para carga rápida y navegación intuitiva.',
         'Panel de Vista de Administrador personalizado para actualización de precios, gestión de stock y pedidos.',
-        '+5M acumulado en ventas directas a través de la tienda online.',
-        'Optimización Core Web Vitals para mejorar el posicionamiento en buscadores (SEO).',
-        'Configuración de embudos de conversión vinculados a campañas de Google Ads.',
+        'Optimización para mejorar el posicionamiento en buscadores (SEO).',
       ],
     },
     {
@@ -217,7 +214,7 @@ const ProjectsPage = () => {
           </motion.div>
 
           <p className="text-xl text-blue-200/80 max-w-2xl mx-auto font-light italic">
-            Soluciones digitales con resultados comprobables.
+            ¡Podés hacer clic en cada proyecto para ver más detalles!
           </p>
         </div>
       </section>

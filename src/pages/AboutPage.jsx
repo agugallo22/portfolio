@@ -39,49 +39,161 @@ const AboutPage = () => {
 
   const experience = [
     {
-      year: '2022 - Presente',
-      title: 'FullStack Developer',
-      company: 'Freelance',
-      description:
-        'Desarrollo de aplicaciones web completas utilizando React, Node.js y bases de datos relacionales.',
+      year: 'ENE 2026 - Presente',
+      title: 'Community Manager',
+      company: 'Pedify',
+      description: (
+        <>
+          Gestión de Instagram, planificación de contenido gráfico (trabajando
+          con un diseñador a mi cargo), planificación/creación de contenido,
+          estrategia de comunicación y campañas publicitarias en Meta ADS para
+          la empresa Pedify SAAS. Instagram:{' '}
+          <a
+            href="https://www.instagram.com/pedify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @pedify.app
+          </a>
+        </>
+      ),
     },
     {
-      year: '2021 - Presente',
+      year: 'OCT 2025 - Presente',
+      title: 'Creador/Editor de video',
+      company: 'Manos Abiertas Rafaela',
+      description: (
+        <>
+          En este trabajo solo me encargo de la parte de los "Reels" para la
+          cuenta de Instagram: Filmación y edición de videos para la ONG Manos
+          Abiertas Rafaela, enfocándome en transmitir su misión y valores a
+          través de contenido audiovisual atractivo. Instagram:{' '}
+          <a
+            href="https://www.instagram.com/manosabiertas.rafa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @manosabiertas.rafa
+          </a>
+        </>
+      ),
+    },
+    {
+      year: 'JUL 2025 - Presente',
       title: 'WordPress Developer',
       company: 'Freelance',
       description:
         'Desarrollo de sitios web y e-commerces en WordPress, personalización de temas y SEO.',
     },
     {
-      year: '2020 - Presente',
+      year: 'DIC 2024 - Presente',
       title: 'Community Manager',
-      company: 'Freelance',
+      company: 'La Copia Librería',
+      description: (
+        <>
+          Gestión de Instagram, diseño de contenido gráfico,
+          planificación/creación de contenido, estrategia de comunicación y
+          campañas publicitarias en Meta ADS para la librería La Copia.
+          Instagram:{' '}
+          <a
+            href="https://www.instagram.com/lacopiarafaela"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @lacopiarafaela
+          </a>
+        </>
+      ),
+    },
+    {
+      year: 'NOV 2024 - OCT 2025',
+      title: 'Community Manager',
+      company: 'La Baguette. Panadería',
+      description: (
+        <>
+          Gestión de Instagram, diseño de contenido
+          gráfico,planificación/creación de contenido, estrategias de
+          comunicación y campañas publicitarias en Meta ADS para la panadería La
+          Baguette. Instagram:{' '}
+          <a
+            href="https://www.instagram.com/labaguetteraf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @labaguetteraf
+          </a>
+        </>
+      ),
+    },
+    {
+      year: 'ABR 2024 - OCT 2025',
+      title: 'Community Manager',
+      company: 'Estilo Italiano Pizzería',
+      description: (
+        <>
+          Gestión de Instagram, diseño de contenido gráfico,
+          planificación/creación de contenido, estrategias de comunicación y
+          campañas publicitarias en Meta ADS para la pizzería Estilo Italiano.
+          Instagram:{' '}
+          <a
+            href="https://www.instagram.com/estiloitaliano.mm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @estiloitaliano.mm
+          </a>
+        </>
+      ),
+    },
+    {
+      year: '2020 - 2021',
+      title: 'Community Manager',
+      company: 'Ragnarök Esports',
       description:
-        'Gestión integral de redes sociales, creación de contenido y pauta publicitaria en Meta ADS.',
+        'Gestión de la cuenta de Twitter e Instagram, interacciones diarias, coberturas de partidos en directo, etc.',
     },
   ];
 
   const education = [
     {
       year: '2026',
+      title: 'Tecnicatura Universitaria en Programación',
+      company: 'UTN',
+      description:
+        'Preparando el trabajo final para presentar en febrero de 2026 y recibirme.',
+    },
+    {
+      year: '2026',
       title: 'OPI 2025',
       company: 'Franco Pisso',
       description:
-        'Formación en comunicación asertiva, oratoria y liderazgo efectivo.',
+        'Curso "Oratoria para inconformistas" edición 2025 dictado por Franco Pisso. Certificado en progreso.',
     },
     {
       year: '2026',
       title: 'Curso de Habilidades Blandas',
       company: 'Franco Pisso',
       description:
-        'Formación en comunicación asertiva, oratoria y liderazgo efectivo.',
+        'Formación en comunicación asertiva, oratoria y liderazgo efectivo. Certificado a disposición.',
     },
     {
-      year: '2026',
-      title: 'Tecnicatura Universitaria en Programación',
-      company: 'UTN',
+      year: '2021',
+      title: 'CURSO COMMUNITY MANAGER EN INS. DEPORTIVAS',
+      company: 'SCOUTING CONSULTORÍA Y GESTIÓN DEPORTIVA',
       description:
-        'Graduado con especialización en desarrollo web y bases de datos.',
+        'Formación especializada en gestión de redes sociales para instituciones deportivas. Certificado a disposición.',
+    },
+    {
+      year: '2021',
+      title: 'CURSO GESTIÓN DE ESPORTS',
+      company: 'SCOUTING CONSULTORÍA Y GESTIÓN DEPORTIVA',
+      description:
+        'Curso orientado a la administración y promoción de equipos y eventos de deportes electrónicos. Certificado a disposición.',
     },
   ];
 
@@ -92,7 +204,7 @@ const AboutPage = () => {
       </Helmet>
 
       {/* Main Full Screen Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center">
+      <section className="relative min-h-screen flex flex-col pt-40 pb-20 items-center">
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
@@ -102,48 +214,52 @@ const AboutPage = () => {
           }}
         />
 
-        <div className="relative z-10 container mx-auto px-4 mt-20">
+        <div className="relative z-10 container mx-auto px-4 mb-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-center mb-12"
+            className="text-center mb-12" // Aumentamos a mb-12 para igualar a Proyectos
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Sobre mí</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+              Sobre mí
+            </h1>
             <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch max-w-6xl mx-auto">
+            {/* Contenedor de la Imagen con altura automática coincidente */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: 'easeOut' }}
-              className="relative group h-[350px] md:h-[450px]"
+              className="relative group h-full"
             >
               <div className="absolute -inset-4 bg-blue-600/20 rounded-[2.5rem] blur-2xl" />
               <img
-                src="https://images.unsplash.com/photo-1603985585179-3d71c35a537c"
+                src="/img/yo-bik.jpeg"
                 alt="Perfil"
                 className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl border border-white/10"
               />
             </motion.div>
 
+            {/* Contenedor del Texto */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: 'easeOut' }}
-              className="p-8 md:p-12 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-center"
+              className="p-8 md:p-10 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-center"
             >
-              <div className="h-16 flex items-center overflow-visible mb-6 text-left">
+              <div className="h-14 flex items-center overflow-visible mb-6 text-left">
                 <AnimatePresence mode="wait">
                   {!showName ? (
                     <motion.img
                       key="logo"
                       src="/img/logo.svg"
                       alt="H.X GALLO"
-                      className="h-10 md:h-14"
+                      className="h-10 md:h-12"
                       initial={{ opacity: 0, filter: 'blur(10px)' }}
                       animate={{ opacity: 1, filter: 'blur(0px)' }}
                       exit={{ opacity: 0, filter: 'blur(10px)' }}
@@ -163,16 +279,29 @@ const AboutPage = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="space-y-4 text-blue-100/90 leading-relaxed font-light text-lg text-left">
+              <div className="space-y-4 text-blue-100/90 leading-relaxed font-light text-base md:text-lg text-left">
                 <p>
-                  Graduado de{' '}
+                  Actualmente estoy esperando la fecha de presentación para
+                  defender mi trabajo final recibirme en la{' '}
                   <strong className="text-white">
                     Tecnicatura Universitaria en Programación
                   </strong>{' '}
-                  en la UTN, con formación técnica avanzada y enfoque humano.
+                  de la UTN. Cuento con formación técnica avanzada y enfoque
+                  humano, habiendo realizado cursos de habilidades blandas y
+                  oratoria.
                 </p>
                 <p>
-                  Desde 2020 gestiono estrategias digitales como <strong className="text-white">Community Manager</strong>, con foco en Meta ADS y creación de contenido.
+                  Desde 2020 trabajo en el mundo de las redes sociales como{' '}
+                  <strong className="text-white">Community Manager</strong>,
+                  habiendo comenzado en el mundo de los deportes electrónicos y
+                  expandiéndome a diversos rubros como gastronomía, librerías y
+                  SaaS.
+                </p>
+                <p>
+                  Además, desarrollo sitios web y tiendas online en{' '}
+                  <strong className="text-white">WordPress</strong> como
+                  freelance, ayudando a emprendedores y pequeñas empresas a
+                  establecer su presencia digital.
                 </p>
               </div>
             </motion.div>
@@ -183,20 +312,20 @@ const AboutPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 3, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/50 pointer-events-none"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/50 pointer-events-none"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
             className="flex flex-col items-center"
           >
-            <ChevronDown size={32} strokeWidth={1} />
-            <ChevronDown size={32} strokeWidth={1} className="-mt-5" />
+            <ChevronDown size={28} strokeWidth={1} />
+            <ChevronDown size={28} strokeWidth={1} className="-mt-4" />
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Stack Section con fondo de imagen solicitado */}
+      {/* Stack Section */}
       <section className="relative py-32 bg-white text-[#050a30] rounded-t-[3.5rem] -mt-1 z-10 overflow-hidden">
         <div
           className="absolute inset-0 z-0 opacity-40"
@@ -232,10 +361,12 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Trayectoria Section - Fondo Blanco Legible */}
+      {/* Trayectoria Section */}
       <section className="py-24 bg-slate-50 rounded-t-[3.5rem] relative z-20 -mt-12">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-16 text-[#050a30]">Trayectoria</h2>
+          <h2 className="text-4xl font-bold mb-16 text-[#050a30]">
+            Trayectoria
+          </h2>
           <div className="space-y-20 text-left">
             <div>
               <h3 className="text-2xl font-bold mb-8 text-blue-600">

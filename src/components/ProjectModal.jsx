@@ -42,7 +42,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed inset-4 md:inset-10 lg:inset-20 bg-[#0a1142] border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col lg:flex-row"
+            className="fixed inset-2 md:inset-10 lg:inset-20 bg-[#0a1142] border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col lg:flex-row"
           >
             {/* Botón Cerrar */}
             <button
@@ -52,7 +52,51 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               <X size={24} />
             </button>
 
-            {/* COLUMNA IZQUIERDA: Información */}
+            {/* COLUMNA SUPERIOR (Móvil) / DERECHA (PC): Carrusel */}
+            {/* Se ajustó de h-[350px] a h-[45vh] o min-h-[400px] para que se vea más grande en celu */}
+            <div className="w-full lg:w-1/2 h-[45vh] min-h-[350px] lg:h-full bg-black/20 relative order-1 lg:order-2 flex items-center justify-center border-b lg:border-b-0 lg:border-l border-white/10 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full h-full p-2 md:p-4 flex items-center justify-center"
+                >
+                  <img
+                    src={allImages[currentIndex]}
+                    className="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-white/5"
+                    alt="Vista del proyecto"
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {allImages.length > 1 && (
+                <>
+                  <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 z-10">
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 z-10">
+                    <ChevronRight size={24} />
+                  </button>
+                  
+                  {/* Dots del carrusel */}
+                  <div className="absolute bottom-6 flex gap-2 z-10">
+                    {allImages.map((_, i) => (
+                      <div 
+                        key={i} 
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === currentIndex ? 'w-8 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]' : 'w-2 bg-white/20'
+                        }`} 
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* COLUMNA INFERIOR (Móvil) / IZQUIERDA (PC): Información */}
             <div className="w-full lg:w-1/2 p-6 md:p-10 lg:p-12 overflow-y-auto custom-scrollbar order-2 lg:order-1 bg-gradient-to-b from-transparent to-[#050a30]/30">
               <span className="inline-block px-4 py-2 bg-blue-600/20 text-blue-400 text-sm font-semibold rounded-full border border-blue-600/30 mb-6">
                 {project.category}
@@ -66,7 +110,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 {project.fullDescription || project.description}
               </p>
 
-              {/* Botones de Acción Estilo Liquid Glass */}
+              {/* Botones de Acción */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {project.link && (
                   <a href={project.link} target="_blank" rel="noopener noreferrer"
@@ -83,7 +127,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               </div>
 
               <div className="space-y-10">
-                {/* Tecnologías con Efecto Liquid Glass */}
+                {/* Tecnologías */}
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-blue-400">Tecnologías</h3>
                   <div className="flex flex-wrap gap-2">
@@ -113,49 +157,6 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   </div>
                 )}
               </div>
-            </div>
-
-            {/* COLUMNA DERECHA: Carrusel con Bordes Unificados */}
-            <div className="w-full lg:w-1/2 h-[350px] lg:h-full bg-black/20 relative order-1 lg:order-2 flex items-center justify-center border-b lg:border-b-0 lg:border-l border-white/10 overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-full h-full p-4 flex items-center justify-center"
-                >
-                  <img
-                    src={allImages[currentIndex]}
-                    className="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-white/5"
-                    alt="Vista del proyecto"
-                  />
-                </motion.div>
-              </AnimatePresence>
-
-              {allImages.length > 1 && (
-                <>
-                  <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 z-10">
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 z-10">
-                    <ChevronRight size={24} />
-                  </button>
-                  
-                  {/* Dots del carrusel */}
-                  <div className="absolute bottom-6 flex gap-2 z-10">
-                    {allImages.map((_, i) => (
-                      <div 
-                        key={i} 
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          i === currentIndex ? 'w-8 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]' : 'w-2 bg-white/20'
-                        }`} 
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
             </div>
           </motion.div>
         </>

@@ -68,7 +68,7 @@ const HomePage = () => {
       name: 'César Flores',
       company: 'Pedify',
       image: '/img/hombre2.jpg',
-      text: 'La estrategia de marketing y pauta digital que está llevando adelante ha sido clave para nuestro crecimiento. Entiende perfectamente nuestro mercado y optimiza cada inversión.',
+      text: 'Excelente servicio, profesionalismo y calidez humana.',
     },
   ];
 
