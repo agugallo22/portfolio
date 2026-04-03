@@ -4,39 +4,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Code,
-  Palette,
-  Layers,
   Share2,
   Video,
   Star,
   ChevronDown,
+  ChartNoAxesCombined,
 } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
 
 const HomePage = () => {
   const services = [
-    {
-      icon: Code,
-      title: 'WordPress Developer',
-      description:
-        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
-    },
-    {
-      icon: Palette,
-      title: 'Front-end Developer',
-      description:
-        'Interfaces de usuario modernas y responsivas con React y TailwindCSS.',
-    },
-    {
-      icon: Layers,
-      title: 'Back-end Developer',
-      description: 'Desarrollo de APIs robustas y bases de datos eficientes.',
-    },
-    {
-      icon: Code,
-      title: 'FullStack Developer',
-      description: 'Soluciones completas desde el front-end hasta el back-end.',
-    },
     {
       icon: Share2,
       title: 'Social Media Manager',
@@ -44,22 +21,33 @@ const HomePage = () => {
         'Gestión profesional de redes sociales y estrategias de contenido.',
     },
     {
+      icon: ChartNoAxesCombined,
+      title: 'Media Buyer',
+      description:
+        'Gestión de pautas publicitarias enfocadas en conversión y crecimiento de audiencia.',
+    },
+    {
       icon: Video,
       title: 'Video Editor',
       description:
-        'Edición de video profesional para contenido de redes y publicidad.',
+        'Edición de video para contenido de redes sociales y publicidad.',
+    },
+    {
+      icon: Code,
+      title: 'WordPress Developer',
+      description:
+        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
+    },
+    {
+      icon: Code,
+      title: 'FullStack Developer',
+      description: 'Soluciones completas desde el front-end hasta el back-end.',
     },
   ];
 
   const testimonials = [
     {
-      name: 'Gastón Scarafia',
-      company: 'Laser Alarmas',
-      image: '/img/hombre1.jpg',
-      text: 'Agustín transformó nuestra presencia digital. El desarrollo web que realizó para Laser Alarmas superó nuestras expectativas, logrando un sitio rápido, seguro y muy profesional.',
-    },
-    {
-      name: 'Ivana García',
+      name: 'Ivana',
       company: 'La Copia',
       image: '/img/mujer1.avif',
       text: 'Excelente gestión de nuestro Instagram. El enfoque en tendencias de Reels y la gestión de consultas han incrementado notablemente nuestra comunidad y el compromiso de los seguidores.',
@@ -67,7 +55,7 @@ const HomePage = () => {
     {
       name: 'César Flores',
       company: 'Pedify',
-      image: '/img/hombre2.jpg',
+      image: '/img/cesar.png',
       text: 'Excelente servicio, profesionalismo y calidez humana.',
     },
   ];
@@ -78,7 +66,7 @@ const HomePage = () => {
         <title>H.X GALLO</title>
       </Helmet>
 
-      {/* Hero Section - Limpia y con fondo de color sólido */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050a30]">
         <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
           <motion.div
@@ -95,11 +83,9 @@ const HomePage = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             />
-
             <p className="text-xl md:text-3xl text-blue-200 mb-12 font-light tracking-wide max-w-3xl">
               Desarrollador Web & Social Media Manager
             </p>
-
             <Link
               to="/proyectos"
               className="inline-block bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#050a30] transition-all duration-500"
@@ -108,7 +94,6 @@ const HomePage = () => {
             </Link>
           </motion.div>
         </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -131,7 +116,7 @@ const HomePage = () => {
         <div
           className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: "url('/img/fondo-blanco.jpg')", // Nombre normalizado
+            backgroundImage: "url('/img/fondo-blanco.jpg')",
             backgroundSize: 'cover',
           }}
         />
@@ -142,9 +127,21 @@ const HomePage = () => {
             </h2>
             <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          {/* items-stretch obliga a todas las columnas a tener el mismo alto */}
+          <div className="flex flex-wrap justify-center gap-10 items-stretch">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} delay={index * 0.1} />
+              <div
+                key={index}
+                className="w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.333%-2.5rem)] max-w-[400px] flex"
+              >
+                {/* Le pasamos una prop className para que ServiceCard la use */}
+                <ServiceCard
+                  {...service}
+                  delay={index * 0.1}
+                  className="flex-1"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -152,15 +149,17 @@ const HomePage = () => {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-[#050a30] rounded-t-[3.5rem] relative z-20 -mt-10 lg:-mt-14">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-16">
-            Clientes satisfechos
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white">
+              Clientes satisfechos
+            </h2>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8">
             {testimonials.map((t, index) => (
               <motion.div
                 key={index}
-                className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center"
+                className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center w-full max-w-[400px]"
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
@@ -171,7 +170,7 @@ const HomePage = () => {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/150';
-                    }} // Fallback por si falla la ruta
+                    }}
                   />
                 </div>
                 <div className="flex gap-1 justify-center mb-4 text-blue-400">
@@ -179,7 +178,7 @@ const HomePage = () => {
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-blue-100/70 mb-8 italic text-sm leading-relaxed min-h-[80px]">
+                <p className="text-blue-100/70 mb-8 italic text-sm leading-relaxed min-h-[80px] text-center">
                   "{t.text}"
                 </p>
                 <div className="text-center">

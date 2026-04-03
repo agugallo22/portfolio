@@ -17,16 +17,27 @@ const AboutPage = () => {
   }, []);
 
   const hardSkills = [
-    'WordPress',
-    'React',
-    'JavaScript',
-    'TailwindCSS',
-    'Meta ADS',
-    'Social Media Management',
-    'Video Editing',
-    'Node.js',
-    'SQL',
-    'SEO Optimization',
+    { name: 'WordPress', type: 'dev' },
+    { name: 'WooCommerce', type: 'dev' },
+    { name: 'React', type: 'dev' },
+    { name: 'Nest.js', type: 'dev' },
+    { name: 'TailwindCSS', type: 'dev' },
+    { name: 'JavaScript', type: 'dev' },
+    { name: 'TypeScript', type: 'dev' },
+    { name: 'C#', type: 'dev' },
+    { name: '.NET', type: 'dev' },
+    { name: 'Node.js', type: 'dev' },
+    { name: 'SQL', type: 'dev' },
+    { name: 'Git', type: 'dev' },
+    { name: 'GitHub', type: 'dev' },
+    { name: 'Meta ADS', type: 'mkt' },
+    { name: 'Gestión de Redes Sociales', type: 'mkt' },
+    { name: 'CapCut', type: 'mkt' },
+    { name: 'PhotoShop', type: 'mkt' },
+    { name: 'Affinity', type: 'mkt' },
+    { name: 'Canva', type: 'mkt' },
+    { name: 'Google Workspace', type: 'mkt' },
+    { name: 'Notion', type: 'mkt' },
   ];
   const softSkills = [
     'Comunicación Asertiva',
@@ -35,19 +46,40 @@ const AboutPage = () => {
     'Adaptabilidad',
     'Trabajo en Equipo',
     'Gestión del Tiempo',
+    'Liderazgo',
   ];
 
   const experience = [
     {
-      year: 'ENE 2026 - Presente',
+      year: 'MAR 2026 - Presente',
       title: 'Community Manager',
+      company: 'Oikos Negocios Inmobiliarios',
+      description: (
+        <>
+          Gestión de Instagram, diseño de contenido gráfico, planificación y
+          creación de contenido, guionación, grabación y edición de reels
+          mostrando inmuebles.<br /> Instagram:{' '}
+          <a
+            href="https://www.instagram.com/oikosnegociosinmobiliarios"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            @oikosnegociosinmobiliarios
+          </a>
+        </>
+      ),
+    },
+    {
+      year: 'ENE 2026 - Presente',
+      title: 'Social Media Manager',
       company: 'Pedify',
       description: (
         <>
           Gestión de Instagram, planificación de contenido gráfico (trabajando
-          con un diseñador a mi cargo), planificación/creación de contenido,
+          con un diseñador a mi cargo), planificación y creación de contenido,
           estrategia de comunicación y campañas publicitarias en Meta ADS para
-          la empresa Pedify SAAS. Instagram:{' '}
+          la empresa Pedify SAAS.<br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/pedify.app"
             target="_blank"
@@ -65,10 +97,11 @@ const AboutPage = () => {
       company: 'Manos Abiertas Rafaela',
       description: (
         <>
-          En este trabajo solo me encargo de la parte de los "Reels" para la
-          cuenta de Instagram: Filmación y edición de videos para la ONG Manos
-          Abiertas Rafaela, enfocándome en transmitir su misión y valores a
-          través de contenido audiovisual atractivo. Instagram:{' '}
+          En este trabajo me encargo de la parte de los "Reels" para la cuenta
+          de Instagram: Creación de contenido, filmación y edición de videos
+          para la ONG Manos Abiertas Rafaela, enfocándome en transmitir su
+          misión y valores a través de contenido audiovisual atractivo.
+          <br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/manosabiertas.rafa"
             target="_blank"
@@ -93,10 +126,9 @@ const AboutPage = () => {
       company: 'La Copia Librería',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido gráfico,
-          planificación/creación de contenido, estrategia de comunicación y
-          campañas publicitarias en Meta ADS para la librería La Copia.
-          Instagram:{' '}
+          Gestión de Instagram, diseño de contenido gráfico, planificación y
+          creación de contenido, estrategia de comunicación y campañas
+          publicitarias en Meta ADS para la librería La Copia.<br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/lacopiarafaela"
             target="_blank"
@@ -114,10 +146,9 @@ const AboutPage = () => {
       company: 'La Baguette. Panadería',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido
-          gráfico,planificación/creación de contenido, estrategias de
-          comunicación y campañas publicitarias en Meta ADS para la panadería La
-          Baguette. Instagram:{' '}
+          Gestión de Instagram, diseño de contenido gráfico, planificación y
+          creación de contenido, estrategias de comunicación y campañas
+          publicitarias en Meta ADS para la panadería La Baguette.<br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/labaguetteraf"
             target="_blank"
@@ -135,10 +166,9 @@ const AboutPage = () => {
       company: 'Estilo Italiano Pizzería',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido gráfico,
-          planificación/creación de contenido, estrategias de comunicación y
-          campañas publicitarias en Meta ADS para la pizzería Estilo Italiano.
-          Instagram:{' '}
+          Gestión de Instagram, diseño de contenido gráfico, planificación y
+          creación de contenido, estrategias de comunicación y campañas
+          publicitarias en Meta ADS para la pizzería Estilo Italiano.<br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/estiloitaliano.mm"
             target="_blank"
@@ -151,7 +181,7 @@ const AboutPage = () => {
       ),
     },
     {
-      year: '2020 - 2021',
+      year: 'OCT 2021 - MAR 2022',
       title: 'Community Manager',
       company: 'Ragnarök Esports',
       description:
@@ -161,18 +191,25 @@ const AboutPage = () => {
 
   const education = [
     {
-      year: '2026',
-      title: 'Tecnicatura Universitaria en Programación',
-      company: 'UTN',
+      year: '2026 - Presente (Finalización prevista: julio 2027)',
+      title: 'Licenciatura en Inteligencia Artificial',
+      company: 'Universidad Blas Pascal',
       description:
-        'Preparando el trabajo final para presentar en febrero de 2026 y recibirme.',
+        'Actualmente cursando la carrera de Licenciatura en Inteligencia Artificial en la Universidad Blas Pascal, con enfoque en aprendizaje automático, procesamiento de lenguaje natural y ética en IA.',
     },
     {
-      year: '2026',
+      year: '2023 - 2026',
+      title: 'Tecnicatura Universitaria en Programación',
+      company: 'Universidad Tecnológica Nacional - Facultad Regional Rafaela',
+      description:
+        'Graduado como Técnico Universitario en Programación con nota de trabajo final 10/10.',
+    },
+    {
+      year: '2025 - 2026',
       title: 'OPI 2025',
       company: 'Franco Pisso',
       description:
-        'Curso "Oratoria para inconformistas" edición 2025 dictado por Franco Pisso. Certificado en progreso.',
+        'Curso "Oratoria para inconformistas" edición 2025 dictado por Franco Pisso. Certificado a disposición.',
     },
     {
       year: '2026',
@@ -183,15 +220,15 @@ const AboutPage = () => {
     },
     {
       year: '2021',
-      title: 'CURSO COMMUNITY MANAGER EN INS. DEPORTIVAS',
-      company: 'SCOUTING CONSULTORÍA Y GESTIÓN DEPORTIVA',
+      title: 'Curso Community Manager en Ins. Deportivas',
+      company: 'Scouting Consultoría y Gestión Deportiva',
       description:
         'Formación especializada en gestión de redes sociales para instituciones deportivas. Certificado a disposición.',
     },
     {
       year: '2021',
-      title: 'CURSO GESTIÓN DE ESPORTS',
-      company: 'SCOUTING CONSULTORÍA Y GESTIÓN DEPORTIVA',
+      title: 'Curso Gestión de Esports',
+      company: 'Scouting Consultoría y Gestión Deportiva',
       description:
         'Curso orientado a la administración y promoción de equipos y eventos de deportes electrónicos. Certificado a disposición.',
     },
@@ -281,29 +318,35 @@ const AboutPage = () => {
 
               <div className="space-y-4 text-blue-100/90 leading-relaxed font-light text-base md:text-lg text-left">
                 <p>
-                  Actualmente estoy esperando la fecha de presentación para
-                  defender mi trabajo final y recibirme en la{' '}
+                  Recientemente graduado como{' '}
                   <strong className="text-white">
-                    Tecnicatura Universitaria en Programación
+                    Técnico Universitario en Programación
                   </strong>{' '}
-                  de la
-                  {' '} <strong className="text-white">
-                    UTN
-                  </strong>. Cuento con formación técnica avanzada y enfoque
-                  humano, habiendo realizado cursos de habilidades blandas y
-                  oratoria.
+                  en la <strong className="text-white">UTN</strong>, y
+                  actualmente estudiando la{' '}
+                  <strong className="text-white">
+                    Licenciatura en Inteligencia Artificial
+                  </strong>{' '}
+                  en la{' '}
+                  <strong className="text-white">
+                    Universidad Blas Pascal
+                  </strong>
+                  . Cuento con formación técnica avanzada y enfoque humano,
+                  habiendo realizado (y realizando actualmente) cursos de
+                  habilidades blandas y oratoria.
                 </p>
                 <p>
-                  Desde 2020 trabajo en el mundo de las redes sociales como{' '}
-                  <strong className="text-white">Community Manager</strong>. Comencé
-                  en el mundo de los deportes electrónicos y luego me expandí
-                  a diversos rubros como gastronomía, librerías,
-                  SaaS, etc.
+                  Desde 2020 trabajo en las redes sociales como{' '}
+                  <strong className="text-white">Community Manager</strong>.
+                  Comencé en el mundo de los deportes electrónicos y luego me
+                  expandí a diversos rubros como gastronomía, librerías,
+                  inmobiliarias, SaaS, entre otras.
                 </p>
                 <p>
                   Además, desarrollo sitios web y tiendas online en{' '}
                   <strong className="text-white">WordPress</strong> como
-                  freelance, y tengo un emprendimiento personal de un Beer Truck como se ve en la imagen llamado{' '}
+                  freelance, y tengo un emprendimiento personal de un Beer Truck
+                  como se ve en la imagen llamado{' '}
                   <strong className="text-white">BIK - Beer In Kombi</strong>.
                 </p>
               </div>
@@ -338,23 +381,28 @@ const AboutPage = () => {
           }}
         />
         <div className="relative z-10 container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-4xl font-bold mb-16">Stack & Aptitudes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-            <div>
-              <h3 className="text-lg font-bold uppercase tracking-widest text-blue-600 mb-6 border-b pb-2">
-                Technical Skills
+          <h2 className="text-4xl font-bold mb-16">Tecnologías y Aptitudes</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="text-center">
+              <h3 className="text-lg font-bold uppercase tracking-widest text-blue-600 mb-6 border-b pb-2 text-center">
+                Habilidades Técnicas
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {hardSkills.map((s, i) => (
-                  <SkillTag key={s} name={s} delay={i * 0.05} />
+                  <SkillTag
+                    key={s.name}
+                    name={s.name}
+                    type={s.type} // Le pasamos si es dev o mkt
+                    delay={i * 0.05}
+                  />
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-lg font-bold uppercase tracking-widest text-blue-600 mb-6 border-b pb-2">
-                Human Skills
+            <div className="text-center">
+              <h3 className="text-lg font-bold uppercase tracking-widest text-blue-600 mb-6 border-b pb-2 text-center">
+                Habilidades Blandas
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {softSkills.map((s, i) => (
                   <SkillTag key={s} name={s} delay={i * 0.05} />
                 ))}

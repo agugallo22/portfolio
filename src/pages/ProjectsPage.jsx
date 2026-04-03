@@ -275,7 +275,7 @@ const ProjectsPage = () => {
               className="text-center py-24"
             >
               <p className="text-blue-200/50 text-xl font-light">
-                Próximamente más proyectos en esta categoría...
+                Para ver mis trabajos de Social Media te invito a visitar mi perfil de Instagram haciendo <a href="https://www.instagram.com/hechoxgallo" target="_blank" className="text-blue-400 hover:underline">click acá</a>.
               </p>
             </motion.div>
           )}
