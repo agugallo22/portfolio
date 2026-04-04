@@ -40,12 +40,12 @@ const AboutPage = () => {
     { name: 'Notion', type: 'mkt' },
   ];
   const softSkills = [
-    'Comunicación Asertiva',
-    'Resolución de Problemas',
-    'Pensamiento Analítico',
+    'Comunicación asertiva',
+    'Resolución de problemas',
+    'Pensamiento analítico',
     'Adaptabilidad',
-    'Trabajo en Equipo',
-    'Gestión del Tiempo',
+    'Trabajo en equipo',
+    'Gestión del tiempo',
     'Liderazgo',
   ];
 
@@ -340,12 +340,11 @@ const AboutPage = () => {
                   <strong className="text-white">Community Manager</strong>.
                   Comencé en el mundo de los deportes electrónicos y luego me
                   expandí a diversos rubros como gastronomía, librerías,
-                  inmobiliarias, SaaS, entre otras.
+                  inmobiliarias, SaaS, entre otros.
                 </p>
                 <p>
-                  Además, desarrollo sitios web y tiendas online en{' '}
-                  <strong className="text-white">WordPress</strong> como
-                  freelance, y tengo un emprendimiento personal de un Beer Truck
+                  Además de la gestión de redes sociales, también desarrollo sitios web y tiendas online en{' '}
+                  <strong className="text-white">WordPress</strong>, y tengo un emprendimiento personal de un Beer Truck
                   como se ve en la imagen llamado{' '}
                   <strong className="text-white">BIK - Beer In Kombi</strong>.
                 </p>
