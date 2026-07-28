@@ -11,6 +11,7 @@ const Navigation = () => {
     { path: '/', label: 'Inicio' },
     { path: '/sobre-mi', label: 'Sobre mí' },
     { path: '/proyectos', label: 'Proyectos' },
+    { path: '/edicion-video', label: 'Edición de Video' },
     { path: '/contacto', label: 'Contacto' }
   ];
 

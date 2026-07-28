@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import HomePage from '@/pages/HomePage';
 import AboutPage from '@/pages/AboutPage';
 import ProjectsPage from '@/pages/ProjectsPage';
+import VideoEditingPage from '@/pages/VideoEditingPage';
 import ContactPage from '@/pages/ContactPage';
 import ScrollToTop from '@/components/ScrollToTop'; // Asegúrate de que la ruta sea correcta
 
@@ -53,6 +54,19 @@ function App() {
                   transition={{ duration: 0.3 }}
                 >
                   <ProjectsPage />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/edicion-video"
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <VideoEditingPage />
                 </motion.div>
               }
             />

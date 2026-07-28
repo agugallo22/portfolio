@@ -157,6 +157,142 @@ const ProjectsPage = () => {
         'Propuesta de estrategias tácticas como Bonos de Dispersión para optimizar la rentabilidad del conductor.',
       ],
     },
+    {
+      id: 6,
+      title: 'La Copia Librería',
+      description: 'Gestioné durante 19 meses la estrategia digital de la marca, con planificación editorial, contenido y Meta Ads.',
+      fullDescription:
+        'Gestioné durante 19 meses la estrategia digital de la marca, desarrollando planificación editorial, contenido para redes sociales y campañas publicitarias en Meta Ads.',
+      category: 'Social Media',
+      igHandle: '@lacopiarafaela',
+      igLink: 'https://www.instagram.com/lacopiarafaela/',
+      role: 'Gestión integral de redes sociales (estrategia de contenido, piezas gráficas, planificación editorial y Meta Ads)',
+      period: 'Diciembre 2024 – Julio 2026 (19 meses)',
+      metrics: [
+        { label: 'Alcance orgánico', value: '+4257%', detail: '85.1K cuentas' },
+        { label: 'Visitas al perfil', value: '+1305%', detail: '31.6K' },
+        { label: 'Visualizaciones', value: '+100%', detail: '765.8K' },
+        { label: 'Nuevos seguidores', value: '+1748' },
+        { label: 'Meta Ads · Alcance', value: '120.4K', detail: 'usuarios únicos · 294K impresiones' },
+        { label: 'Meta Ads · CTR', value: '1.81%', detail: 'CPC $45,58 ARS · 5339 clics' },
+      ],
+      media: [
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DZBXExQO7vw/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DKsOI7cOK3I/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DTklT1ojO8s/' },
+      ],
+      results: [
+        'Multipliqué el alcance orgánico en un 4.257,2%, alcanzando 85.100 cuentas, e incrementé las visitas al perfil en un 1.305,3%, llegando a 31.600 visitas.',
+        'Generé 765.800 visualizaciones (+100%) y consolidé una comunidad de 1.748 nuevos seguidores mediante una estrategia sostenida de contenido e identidad visual.',
+        'Administré campañas en Meta Ads con una inversión de ARS $243.327, alcanzando 120.408 usuarios, 294.329 impresiones y 5.339 clics, obteniendo un CTR de 1,81% y un CPC promedio de ARS $45,58.',
+      ],
+    },
+    {
+      id: 7,
+      title: 'Oikos Negocios Inmobiliarios',
+      description: 'Diseñé e implementé la estrategia de contenido audiovisual de la empresa para fortalecer su posicionamiento digital.',
+      fullDescription:
+        'Diseñé e implementé la estrategia de contenido audiovisual de la empresa mediante planificación, elaboración de guiones, grabación, edición de videos y desarrollo de piezas gráficas para fortalecer su posicionamiento digital.',
+      category: 'Social Media',
+      igHandle: '@oikosnegociosinmobiliarios',
+      igLink: 'https://www.instagram.com/oikosnegociosinmobiliarios/',
+      role: 'Estrategia de contenido audiovisual con guiones propios, grabación y edición de video, más piezas gráficas',
+      period: 'Marzo 2026 – Actualidad (5 meses)',
+      metrics: [
+        { label: 'Visualizaciones', value: '1.7M', detail: '+61.7% en menos de 5 meses' },
+        { label: 'Alcance orgánico', value: '+112.3%', detail: '53.7K cuentas' },
+        { label: 'Visitas al perfil', value: '+39.8%', detail: '18.7K' },
+        { label: 'Nuevos seguidores', value: '+1.2K', detail: '+45.5%' },
+        { label: 'Interacciones', value: '18K', detail: '+41%' },
+      ],
+      media: [
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DajR2RyDDqj/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DaVkT8LjCpw/' },
+      ],
+      results: [
+        'Alcancé 1,7 millones de visualizaciones en menos de cinco meses, incrementando este indicador en un 61,7%.',
+        'Incrementé el alcance orgánico en un 112,3%, alcanzando 53.700 cuentas, y aumenté las visitas al perfil en un 39,8% (18.700 visitas).',
+        'Consolidé la comunidad con 1.200 nuevos seguidores (+45,5%) y 18.000 interacciones (+41%), fortaleciendo la presencia digital de la marca.',
+      ],
+    },
+    {
+      id: 8,
+      title: 'Pedify',
+      description: 'Construí desde cero la estrategia de crecimiento 100% orgánico de una startup, sin inversión en pauta.',
+      fullDescription:
+        'Construí desde cero la estrategia de crecimiento 100% orgánico de la startup, desarrollando contenido gráfico y audiovisual orientado al posicionamiento de la marca, sin inversión en pauta publicitaria.',
+      category: 'Social Media',
+      igHandle: '@pedify.app',
+      igLink: 'https://www.instagram.com/pedify.app',
+      role: 'Construcción de la estrategia de contenido orgánico desde cero para una startup',
+      period: 'Enero 2026 – Actualidad (7 meses)',
+      metrics: [
+        { label: 'Visualizaciones', value: '19.6K', detail: '+13.200% desde cero' },
+        { label: 'Alcance', value: '3.6K', detail: 'cuentas · +11.800%' },
+        { label: 'Nuevos seguidores', value: '+195', detail: '+3.800%' },
+        { label: 'Visitas al perfil', value: '1.4K', detail: '+3.600%' },
+      ],
+      media: [
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DWekZthB6pK/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DUg6Xv4Acj0/' },
+      ],
+      results: [
+        'Alcancé 19.600 visualizaciones (+13.200%) y 3.600 cuentas (+11.800%) durante los primeros siete meses de gestión.',
+        'Generé 1.400 visitas al perfil (+3.600%) y 195 nuevos seguidores (+3.800%), consolidando una comunidad completamente orgánica.',
+        'Incrementé las interacciones mediante contenido estratégico alineado con los objetivos comerciales de la startup.',
+      ],
+    },
+    {
+      id: 9,
+      title: 'Sumak Indumentaria',
+      description: 'Diseñé la estrategia de contenidos y optimicé la comunicación digital de la marca.',
+      fullDescription:
+        'Diseñé la estrategia de contenidos y optimicé la comunicación digital de la marca mediante una planificación orientada a fortalecer el alcance y la generación de oportunidades comerciales.',
+      category: 'Social Media',
+      igHandle: '@sumak_indumentaria',
+      igLink: 'https://www.instagram.com/sumak_indumentaria/',
+      role: 'Gestión integral de redes sociales orientada a captación',
+      period: 'Abril 2026 – Junio 2026 (3 meses)',
+      metrics: [
+        { label: 'Contactos comerciales', value: '+76%', detail: '44 leads en 3 meses' },
+        { label: 'Exposición', value: '7K', detail: 'usuarios únicos · 5348 no seguían la cuenta' },
+        { label: 'Visualizaciones', value: '39.7K' },
+        { label: 'Interacciones', value: '968', detail: '+41.7%' },
+        { label: 'Nuevos seguidores', value: '+153', detail: '+37.8%' },
+      ],
+      media: [
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DX2ZV7nJq_o/' },
+      ],
+      results: [
+        'Diseñé y ejecuté una campaña de fidelización basada en sorteos por etapas semanales, reemplazando una acción promocional única por una estrategia de participación recurrente que sostuvo el alcance orgánico durante un mes.',
+        'Alcancé 7.000 usuarios únicos, de los cuales 5.348 no seguían previamente la marca, generando 39.700 visualizaciones.',
+        'Incrementé los contactos comerciales en un 76% (44 leads) mediante la optimización de la comunicación y la implementación de llamados estratégicos a la acción.',
+        'Aumenté las interacciones en un 41,7% y los nuevos seguidores en un 37,8%, fortaleciendo el engagement de la comunidad.',
+      ],
+    },
+    {
+      id: 10,
+      title: 'ONG Manos Abiertas Rafaela',
+      description: 'Producción de contenido audiovisual institucional con foco en storytelling.',
+      fullDescription:
+        'Produzco contenido audiovisual institucional mediante la elaboración de guiones, grabación y edición de videos con foco en storytelling, fortaleciendo la comunicación de la organización y su vínculo con la comunidad.',
+      category: 'Social Media',
+      igHandle: '@manosabiertas.rafa',
+      igLink: 'https://www.instagram.com/manosabiertas.rafa/',
+      role: 'Producción de contenido audiovisual institucional (guion, grabación y edición) con foco en storytelling',
+      period: 'Octubre 2025 – Actualidad',
+      metrics: [],
+      highlight: {
+        url: 'https://www.instagram.com/p/DR-wQuSAPAS/',
+        note: 'Este reel se viralizó fuerte gracias al storytelling: es el mejor ejemplo de cómo una narrativa bien construida puede generar alcance orgánico incluso sin objetivo comercial.',
+      },
+      media: [
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DT3EIIEgK0B/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DTf4CVkgH-O/' },
+        { type: 'reel', platform: 'instagram', url: 'https://www.instagram.com/p/DR-wQuSAPAS/' },
+      ],
+      results: [],
+    },
   ];
 
   // Filtrado de proyectos según categoría seleccionada
@@ -196,7 +332,7 @@ const ProjectsPage = () => {
         <div
           className="absolute inset-0 z-0 opacity-30"
           style={{
-            backgroundImage: "url('img/Fondo azul con detalles.png')",
+            backgroundImage: "url('img/fondo-azul-detalles-2.png')",
             backgroundSize: 'cover',
           }}
         />

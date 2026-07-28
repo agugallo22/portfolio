@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Instagram } from 'lucide-react';
 
-const ProjectCard = ({ image, title, description, category, onClick, delay = 0 }) => {
+const ProjectCard = ({ image, title, description, category, igHandle, onClick, delay = 0 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -17,12 +17,21 @@ const ProjectCard = ({ image, title, description, category, onClick, delay = 0 }
       onClick={onClick}
     >
       <div className="relative overflow-hidden h-56 flex-shrink-0">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-600/30 via-[#0a1142] to-[#050a30] flex flex-col items-center justify-center gap-2 transition-transform duration-500 group-hover:scale-110">
+            <Instagram size={40} className="text-blue-300/80" />
+            {igHandle && (
+              <span className="text-blue-200/70 text-sm font-medium">{igHandle}</span>
+            )}
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050a30]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <div className="flex items-center gap-2 text-white">
             <ExternalLink size={20} />
