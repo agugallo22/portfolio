@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Instagram, X } from 'lucide-react';
 import VideoPlayer from '@/components/VideoPlayer';
@@ -144,6 +145,22 @@ const VideoEditingPage = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-16"
+          >
+            <p className="text-blue-200/60 mb-4">¿Te gustó lo que viste?</p>
+            <Link
+              to="/contacto"
+              className="inline-block bg-transparent border-2 border-white/30 text-white px-10 py-3.5 rounded-full font-bold hover:bg-white hover:text-[#050a30] hover:border-white transition-all duration-500"
+            >
+              Contactame
+            </Link>
+          </motion.div>
         </div>
       </section>
 
