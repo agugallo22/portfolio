@@ -63,6 +63,7 @@ const Navigation = () => {
           </div>
 
           <button
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
             className="md:hidden text-white hover:text-blue-400 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >

@@ -61,14 +61,14 @@ const Footer = () => {
 
         {/* Social Media & Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/40 text-xs tracking-widest uppercase">
+          <p className="text-white/60 text-xs tracking-widest uppercase">
             © {currentYear} H.X GALLO. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="https://instagram.com/hechoxgallo" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
+            <a href="https://instagram.com/hechoxgallo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
               <Instagram size={20} />
             </a>
-            <a href="https://linkedin.com/in/agugallo" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
+            <a href="https://linkedin.com/in/agugallo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
               <Linkedin size={20} />
             </a>
             <a href="/docs/CV-Agustin-Gallo.pdf" download aria-label="Descargar CV" title="Descargar CV" className="text-white/60 hover:text-white transition-all transform hover:scale-110">

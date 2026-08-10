@@ -310,7 +310,7 @@ const HomePage = () => {
                   "{t.text}"
                 </p>
                 <div className="text-center">
-                  <h4 className="font-bold text-white text-base">{t.name}</h4>
+                  <h3 className="font-bold text-white text-base">{t.name}</h3>
                   <p className="text-blue-400 text-sm font-medium">
                     {t.company}
                   </p>
