@@ -21,16 +21,6 @@ const ProjectsPage = () => {
 
   const projects = [
     {
-      id: 1,
-      image: 'img/Proyectos/cargando-proyectos.jpg',
-      title: 'Cargando...',
-      description: 'Próximamente estarán todos mis proyectos acá.',
-      fullDescription: '',
-      category: '¡Estoy trabajando en esto!',
-      technologies: ['Próximamente...'],
-      results: [],
-    },
-   {
       id: 2,
       image: 'img/Proyectos/laser-inicio.png',
       title: 'Laser Alarmas',
