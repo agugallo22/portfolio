@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, FileDown } from 'lucide-react';
 import TimelineItem from '@/components/TimelineItem';
 import SkillTag from '@/components/SkillTag';
 
@@ -51,14 +51,25 @@ const AboutPage = () => {
 
   const experience = [
     {
+      year: 'DIC 2024 - Presente',
+      title: 'Fundador y Estratega Digital',
+      company: 'HXGALLO',
+      description:
+        'Agencia propia especializada en marketing digital, estrategia de contenidos y desarrollo web. Diseño e implemento estrategias digitales para empresas de distintos rubros: planificación de contenidos, producción audiovisual, gestión de redes sociales, campañas en Meta Ads y soluciones web. Coordino el trabajo junto a un diseñador gráfico y un editor audiovisual, administrando hasta cuatro cuentas de forma simultánea. Más de 2,5 millones de visualizaciones acumuladas en los proyectos gestionados.',
+    },
+    {
       year: 'MAR 2026 - Presente',
-      title: 'Community Manager',
+      title: 'Estrategia de contenido audiovisual',
       company: 'Oikos Negocios Inmobiliarios',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido gráfico, planificación y
-          creación de contenido, guionación, grabación y edición de reels
-          mostrando inmuebles.<br /> Instagram:{' '}
+          Diseño e implementación de la estrategia de contenido audiovisual:
+          planificación, guiones, grabación, edición de videos y piezas
+          gráficas. En los primeros cinco meses de gestión: 1,7M de
+          visualizaciones (+61,7%), alcance orgánico +112,3% (53.700
+          cuentas), visitas al perfil +39,8% (18.700 visitas), 1.200 nuevos
+          seguidores (+45,5%) y 18.000 interacciones (+41%).
+          <br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/oikosnegociosinmobiliarios"
             target="_blank"
@@ -76,10 +87,12 @@ const AboutPage = () => {
       company: 'Pedify',
       description: (
         <>
-          Gestión de Instagram, planificación de contenido gráfico (trabajando
-          con un diseñador a mi cargo), planificación y creación de contenido,
-          estrategia de comunicación y campañas publicitarias en Meta ADS para
-          la empresa Pedify SAAS.<br /> Instagram:{' '}
+          Estrategia de crecimiento 100% orgánico construida desde cero para
+          la startup, con contenido gráfico y audiovisual y sin inversión en
+          pauta. En los primeros siete meses: 19.600 visualizaciones
+          (+13.200%), 3.600 cuentas alcanzadas (+11.800%), 1.400 visitas al
+          perfil (+3.600%) y 195 nuevos seguidores (+3.800%).
+          <br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/pedify.app"
             target="_blank"
@@ -97,10 +110,9 @@ const AboutPage = () => {
       company: 'Manos Abiertas Rafaela',
       description: (
         <>
-          En este trabajo me encargo de la parte de los "Reels" para la cuenta
-          de Instagram: Creación de contenido, filmación y edición de videos
-          para la ONG Manos Abiertas Rafaela, enfocándome en transmitir su
-          misión y valores a través de contenido audiovisual atractivo.
+          Producción de contenido audiovisual institucional: guiones,
+          grabación y edición de videos con foco en storytelling, fortaleciendo
+          la comunicación de la ONG y su vínculo con la comunidad.
           <br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/manosabiertas.rafa"
@@ -116,19 +128,37 @@ const AboutPage = () => {
     {
       year: 'JUL 2025 - Presente',
       title: 'WordPress Developer',
-      company: 'Freelance',
-      description:
-        'Desarrollo de sitios web y e-commerces en WordPress, personalización de temas y SEO.',
+      company: 'Laser Alarmas',
+      description: (
+        <>
+          Desarrollo del sitio web corporativo y e-commerce mediante WordPress
+          y WooCommerce para una empresa con más de 20 años de trayectoria en
+          seguridad electrónica, fortaleciendo su presencia online y su canal
+          digital de comercialización.<br /> Sitio web:{' '}
+          <a
+            href="https://www.laseralarmas.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            www.laseralarmas.com.ar
+          </a>
+        </>
+      ),
     },
     {
-      year: 'DIC 2024 - Presente',
+      year: 'DIC 2024 - JUL 2026',
       title: 'Community Manager',
       company: 'La Copia Librería',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido gráfico, planificación y
-          creación de contenido, estrategia de comunicación y campañas
-          publicitarias en Meta ADS para la librería La Copia.<br /> Instagram:{' '}
+          19 meses de gestión de la estrategia digital: planificación
+          editorial, contenido para redes y campañas en Meta Ads. Alcance
+          orgánico +4.257,2% (85.100 cuentas), visitas al perfil +1.305,3%
+          (31.600 visitas), 765.800 visualizaciones (+100%) y 1.748 nuevos
+          seguidores. Campañas en Meta Ads con inversión de ARS $243.327:
+          120.408 usuarios alcanzados, CTR 1,81% y CPC promedio ARS $45,58.
+          <br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/lacopiarafaela"
             target="_blank"
@@ -141,24 +171,11 @@ const AboutPage = () => {
       ),
     },
     {
-      year: 'NOV 2024 - OCT 2025',
-      title: 'Community Manager',
-      company: 'La Baguette. Panadería',
-      description: (
-        <>
-          Gestión de Instagram, diseño de contenido gráfico, planificación y
-          creación de contenido, estrategias de comunicación y campañas
-          publicitarias en Meta ADS para la panadería La Baguette.<br /> Instagram:{' '}
-          <a
-            href="https://www.instagram.com/labaguetteraf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            @labaguetteraf
-          </a>
-        </>
-      ),
+      year: 'ABR 2026 - JUN 2026',
+      title: 'Estrategia de contenidos',
+      company: 'SUMAK Indumentaria',
+      description:
+        'Campaña de fidelización con sorteos por etapas semanales, reemplazando una acción promocional única por una estrategia de participación recurrente. 7.000 usuarios únicos alcanzados (5.348 no seguidores previos), 39.700 visualizaciones, contactos comerciales +76% (44 leads), interacciones +41,7% y nuevos seguidores +37,8%.',
     },
     {
       year: 'ABR 2024 - OCT 2025',
@@ -166,9 +183,10 @@ const AboutPage = () => {
       company: 'Estilo Italiano Pizzería',
       description: (
         <>
-          Gestión de Instagram, diseño de contenido gráfico, planificación y
-          creación de contenido, estrategias de comunicación y campañas
-          publicitarias en Meta ADS para la pizzería Estilo Italiano.<br /> Instagram:{' '}
+          18 meses de gestión de la estrategia de contenidos y comunicación
+          digital, desarrollando contenido gráfico y audiovisual para
+          fortalecer la identidad de la marca y sostener una relación
+          comercial de largo plazo.<br /> Instagram:{' '}
           <a
             href="https://www.instagram.com/estiloitaliano.mm"
             target="_blank"
@@ -181,17 +199,24 @@ const AboutPage = () => {
       ),
     },
     {
-      year: 'OCT 2021 - MAR 2022',
+      year: 'MAY 2022 - JUN 2022',
       title: 'Community Manager',
+      company: 'Hawks LATAM',
+      description:
+        'Gestión de la comunidad en Twitter/X: interacción diaria, generación de contenido y cobertura de eventos en vivo.',
+    },
+    {
+      year: 'DIC 2021 - MAR 2022',
+      title: 'Jefe de Comunicación',
       company: 'Ragnarök Esports',
       description:
-        'Gestión de la cuenta de Twitter e Instagram, interacciones diarias, coberturas de partidos en directo, etc.',
+        'Liderazgo de la comunicación digital del equipo: planificación de contenidos, administración de comunidades y cobertura de competencias y eventos dentro del ecosistema de esports.',
     },
   ];
 
   const education = [
     {
-      year: '2026 - Presente (Finalización prevista: julio 2027)',
+      year: '2026 - Presente',
       title: 'Licenciatura en Inteligencia Artificial',
       company: 'Universidad Blas Pascal',
       description:
@@ -203,6 +228,12 @@ const AboutPage = () => {
       company: 'Universidad Tecnológica Nacional - Facultad Regional Rafaela',
       description:
         'Graduado como Técnico Universitario en Programación con nota de trabajo final 10/10.',
+    },
+    {
+      year: '2023',
+      title: 'Tecnicatura en Electrónica',
+      company: 'E.E.T.P Nº 460 Guillermo Lehmann - Rafaela',
+      description: 'Graduado como Técnico en Electrónica.',
     },
     {
       year: '2025 - 2026',
@@ -275,7 +306,7 @@ const AboutPage = () => {
             >
               <div className="absolute -inset-4 bg-blue-600/20 rounded-[2.5rem] blur-2xl" />
               <img
-                src="/img/yo-bik.jpeg"
+                src="/img/foto recibida.png"
                 alt="Perfil"
                 className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl border border-white/10"
               />
@@ -318,12 +349,32 @@ const AboutPage = () => {
 
               <div className="space-y-4 text-blue-100/90 leading-relaxed font-light text-base md:text-lg text-left">
                 <p>
-                  Recientemente graduado como{' '}
+                  Fundador de{' '}
+                  <strong className="text-white">HXGALLO</strong>, agencia de
+                  marketing digital y desarrollo web. Gestioné proyectos para
+                  10 clientes de distintos rubros (SaaS, inmobiliaria, retail,
+                  gastronomía, seguridad electrónica, ONGs), con estrategias
+                  que generaron más de{' '}
+                  <strong className="text-white">
+                    2,5 millones de visualizaciones
+                  </strong>{' '}
+                  acumuladas.
+                </p>
+                <p>
+                  Trabajo en redes sociales como{' '}
+                  <strong className="text-white">Community Manager</strong>{' '}
+                  desde 2020. Comencé en el mundo de los deportes electrónicos
+                  y luego me expandí a gastronomía, librerías, inmobiliarias,
+                  SaaS, entre otros.
+                </p>
+                <p>
+                  Complemento esto con formación técnica: recién graduado
+                  como{' '}
                   <strong className="text-white">
                     Técnico Universitario en Programación
                   </strong>{' '}
                   en la <strong className="text-white">UTN</strong>, y
-                  actualmente estudiando la{' '}
+                  actualmente cursando la{' '}
                   <strong className="text-white">
                     Licenciatura en Inteligencia Artificial
                   </strong>{' '}
@@ -331,21 +382,11 @@ const AboutPage = () => {
                   <strong className="text-white">
                     Universidad Blas Pascal
                   </strong>
-                  . Cuento con formación técnica avanzada y enfoque humano,
-                  habiendo realizado (y realizando actualmente) cursos de
-                  habilidades blandas y oratoria.
+                  .
                 </p>
                 <p>
-                  Desde 2020 trabajo en las redes sociales como{' '}
-                  <strong className="text-white">Community Manager</strong>.
-                  Comencé en el mundo de los deportes electrónicos y luego me
-                  expandí a diversos rubros como gastronomía, librerías,
-                  inmobiliarias, SaaS, entre otros.
-                </p>
-                <p>
-                  Además de la gestión de redes sociales, también desarrollo sitios web y tiendas online en{' '}
-                  <strong className="text-white">WordPress</strong>, y tengo un emprendimiento personal de un Beer Truck
-                  como se ve en la imagen llamado{' '}
+                  Además desarrollo sitios web y tiendas online en{' '}
+                  <strong className="text-white">WordPress</strong>, y tengo un emprendimiento personal de un Beer Truck llamado{' '}
                   <strong className="text-white">BIK - Beer In Kombi</strong>.
                 </p>
               </div>
@@ -442,12 +483,21 @@ const AboutPage = () => {
       <section className="py-24 bg-[#050a30] text-white rounded-t-[3.5rem] relative z-30 -mt-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">¿Trabajamos juntos?</h2>
-          <Link
-            to="/contacto"
-            className="inline-block bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-[#050a30] transition-all duration-500 shadow-xl"
-          >
-            Contactame
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contacto"
+              className="inline-block bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-[#050a30] transition-all duration-500 shadow-xl"
+            >
+              Contactame
+            </Link>
+            <a
+              href="/docs/CV-Agustin-Gallo.pdf"
+              download
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold transition-all duration-500 shadow-xl"
+            >
+              <FileDown size={20} /> Descargar CV
+            </a>
+          </div>
         </div>
       </section>
     </div>

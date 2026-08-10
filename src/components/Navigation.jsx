@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileDown } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +22,24 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050a30]/40 backdrop-blur-xl border-b border-white/5 shadow-2xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="img/logo.png" 
-              alt="H.X GALLO" 
-              className="h-5 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]" 
-            />
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center">
+              <img
+                src="img/logo.png"
+                alt="H.X GALLO"
+                className="h-5 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+              />
+            </Link>
+            <a
+              href="/docs/CV-Agustin-Gallo.pdf"
+              download
+              aria-label="Descargar CV"
+              title="Descargar CV"
+              className="text-white/50 hover:text-blue-400 transition-colors"
+            >
+              <FileDown size={16} />
+            </a>
+          </div>
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (

@@ -11,6 +11,7 @@ import {
   ChartNoAxesCombined,
 } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
+import AutoplayVideoCard from '@/components/AutoplayVideoCard';
 
 const HomePage = () => {
   const services = [
@@ -45,6 +46,22 @@ const HomePage = () => {
     },
   ];
 
+  const reels = [
+    { src: '/videos/oikos-amueblado.mp4', label: 'Oikos - Inmobiliaria' },
+    { src: '/videos/hxgallo-laser-alarmas.mp4', label: 'Laser Alarmas - Tienda' },
+    { src: '/videos/oikos-venta-menchaca.mp4', label: 'Oikos - Inmobiliaria' },
+    { src: '/videos/bigpons-hamburguesa.mp4', label: 'Big Pons - Hamburguesería' },
+  ];
+
+  const clients = [
+    { name: 'Oikos Negocios Inmobiliarios', logo: '/img/logos/oikos.png', highlight: '+1,7M de visualizaciones' },
+    { name: 'Pedify', logo: '/img/logos/pedify.png', highlight: '+13.200% de visualizaciones' },
+    { name: 'La Copia Librería', logo: '/img/logos/lacopia.png', highlight: '+765K de visualizaciones' },
+    { name: 'Laser Alarmas', logo: '/img/logos/laser-alarmas.png', highlight: 'Sitio web + e-commerce' },
+    { name: 'ONG Manos Abiertas Rafaela', logo: '/img/logos/manosabiertas.png', highlight: 'Contenido institucional' },
+    { name: 'SUMAK Indumentaria', logo: '/img/logos/sumak.png', highlight: '+7.000 usuarios alcanzados' },
+  ];
+
   const testimonials = [
     {
       name: 'Ivana',
@@ -74,6 +91,15 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050a30]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          src="/videos/hxgallo-laser-alarmas.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050a30]/60 via-[#050a30]/70 to-[#050a30] z-[1]" />
         <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,6 +141,91 @@ const HomePage = () => {
             <ChevronDown size={32} strokeWidth={1} className="-mt-5" />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Trabajos de edición Section */}
+      <section className="relative py-24 bg-[#050a30] z-10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Edición de video
+            </h2>
+            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full" />
+          </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {reels.map((reel, index) => (
+              <motion.div
+                key={reel.src}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+              >
+                <AutoplayVideoCard src={reel.src} label={reel.label} />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-14"
+          >
+            <Link
+              to="/edicion-video"
+              className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-lg shadow-blue-600/20"
+            >
+              Ver más ediciones de video
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Clientes Section */}
+      <section className="relative py-24 bg-[#050a30] rounded-t-[3.5rem] -mt-1 z-10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Algunos clientes y resultados obtenidos
+            </h2>
+            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full" />
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {clients.map((c, index) => (
+              <motion.div
+                key={c.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -5 }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-center flex flex-col items-center"
+              >
+                <img
+                  src={c.logo}
+                  alt={c.name}
+                  className="h-12 max-w-[160px] object-contain mb-4"
+                />
+                <h3 className="font-bold text-white text-lg mb-2">{c.name}</h3>
+                <p className="text-blue-400 font-medium">{c.highlight}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}

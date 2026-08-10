@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Monitor, Github, Instagram, ChevronLeft, ChevronRight } from 'lucide-react';
 import MediaLinkCard from '@/components/MediaLinkCard';
+import AutoplayVideoCard from '@/components/AutoplayVideoCard';
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,7 +70,17 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                       transition={{ duration: 0.4 }}
                       className="w-full max-w-md"
                     >
-                      <MediaLinkCard item={project.media[currentIndex]} />
+                      {project.media[currentIndex].type === 'video' ? (
+                        <AutoplayVideoCard src={project.media[currentIndex].src} />
+                      ) : project.media[currentIndex].type === 'image' ? (
+                        <img
+                          src={project.media[currentIndex].src}
+                          className="w-full max-h-[60vh] object-contain rounded-xl shadow-2xl border border-white/5 mx-auto"
+                          alt="Vista del proyecto"
+                        />
+                      ) : (
+                        <MediaLinkCard item={project.media[currentIndex]} />
+                      )}
                     </motion.div>
                   </AnimatePresence>
                 </div>
@@ -127,9 +138,18 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 {project.category}
               </span>
 
-              <h2 className="text-3xl md:text-5xl font-bold mb-2 tracking-tight text-white">
-                {project.title}
-              </h2>
+              <div className="flex items-center gap-4 mb-2">
+                {project.logo && (
+                  <img
+                    src={project.logo}
+                    alt={`Logo ${project.title}`}
+                    className="h-12 max-w-[120px] object-contain"
+                  />
+                )}
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+                  {project.title}
+                </h2>
+              </div>
 
               {(project.role || project.period) && (
                 <p className="text-blue-300/70 text-sm font-medium mb-6">

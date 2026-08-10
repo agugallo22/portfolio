@@ -1,7 +1,7 @@
 import React from 'react'; // Eliminamos useState ya que no hay formulario
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Instagram, Linkedin, FileDown } from 'lucide-react';
 import ContactInfo from '@/components/ContactInfo';
 
 const ContactPage = () => {
@@ -58,8 +58,8 @@ const ContactPage = () => {
                 <ContactInfo
                   icon={Mail}
                   title="Email"
-                  value="contacto@hxgallo.com"
-                  link="mailto:contacto@hxgallo.com"
+                  value="hechoxgallo@gmail.com"
+                  link="mailto:hechoxgallo@gmail.com"
                 />
                 <ContactInfo
                   icon={Send}
@@ -71,7 +71,7 @@ const ContactPage = () => {
                    <ContactInfo
                     icon={MapPin}
                     title="Ubicación"
-                    value="Rafaela, Santa Fe, Argentina"
+                    value="CABA, Argentina"
                   />
                 </div>
               </div>
@@ -98,6 +98,14 @@ const ContactPage = () => {
                   </a>
                 </div>
               </div>
+
+              <a
+                href="/docs/CV-Agustin-Gallo.pdf"
+                download
+                className="mt-10 inline-flex items-center gap-2 bg-[#050a30] hover:bg-blue-600 text-white px-10 py-4 rounded-full font-bold transition-all duration-500 shadow-xl"
+              >
+                <FileDown size={20} /> Descargar CV
+              </a>
             </div>
           </motion.div>
         </div>

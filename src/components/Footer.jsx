@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, FileDown } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-white/70 text-sm">
                 <Mail size={16} className="text-white-500" />
-                <span>contacto@hxgallo.com</span>
+                <span>hechoxgallo@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-white/70 text-sm">
                 <Phone size={16} className="text-white-500" />
@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-white/70 text-sm">
                 <MapPin size={16} className="text-white-500" />
-                <span>Rafaela, Santa Fe, Argentina</span>
+                <span>CABA, Argentina</span>
               </div>
             </div>
           </div>
@@ -70,6 +70,9 @@ const Footer = () => {
             </a>
             <a href="https://linkedin.com/in/agugallo" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
               <Linkedin size={20} />
+            </a>
+            <a href="/docs/CV-Agustin-Gallo.pdf" download aria-label="Descargar CV" title="Descargar CV" className="text-white/60 hover:text-white transition-all transform hover:scale-110">
+              <FileDown size={20} />
             </a>
           </div>
         </div>
