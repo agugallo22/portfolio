@@ -1,9 +1,38 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 
 const AutoplayVideoCard = ({ src, label, onExpand, className = '' }) => {
+  const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  // Carga el video recién cuando la card entra (o está por entrar) en pantalla,
+  // para no saturar al navegador si hay muchos videos autoplay juntos en una página.
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+    // React no siempre aplica bien el atributo `muted` en <video>, así que se setea
+    // por código para que el autoplay no sea bloqueado por el navegador.
+    video.muted = true;
+    video.play().catch(() => {});
+  }, [src, shouldLoad]);
 
   const toggleSound = () => {
     if (videoRef.current) {
@@ -14,20 +43,23 @@ const AutoplayVideoCard = ({ src, label, onExpand, className = '' }) => {
 
   return (
     <div
+      ref={containerRef}
       className={`relative aspect-[9/16] w-full max-w-xs mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 ${className}`}
     >
-      <video
-        ref={videoRef}
-        src={src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="w-full h-full object-cover"
-      />
+      {shouldLoad && (
+        <video
+          ref={videoRef}
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
+        />
+      )}
       {label && (
-        <span className="absolute bottom-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-xs font-semibold">
+        <span className="absolute top-3 left-3 inline-block max-w-[calc(100%-1.5rem)] px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-xs font-semibold truncate">
           {label}
         </span>
       )}

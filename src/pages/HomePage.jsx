@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -14,35 +14,45 @@ import ServiceCard from '@/components/ServiceCard';
 import AutoplayVideoCard from '@/components/AutoplayVideoCard';
 
 const HomePage = () => {
+  const heroVideoRef = useRef(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
+
   const services = [
     {
       icon: Share2,
       title: 'Social Media Manager',
       description:
-        'Gestión profesional de redes sociales y estrategias de contenido.',
+        'Estrategia de contenidos, planificación editorial y gestión integral de redes sociales.',
     },
     {
       icon: ChartNoAxesCombined,
       title: 'Media Buyer',
       description:
-        'Gestión de pautas publicitarias enfocadas en conversión y crecimiento de audiencia.',
+        'Gestión de campañas en Meta Ads orientadas a conversión y crecimiento de audiencia.',
     },
     {
       icon: Video,
       title: 'Video Editor',
       description:
-        'Edición de video para contenido de redes sociales y publicidad.',
+        'Guion, grabación y edición de video para redes sociales y contenido audiovisual.',
     },
     {
       icon: Code,
       title: 'WordPress Developer',
       description:
-        'Desarrollo de sitios web personalizados en WordPress con diseño profesional.',
+        'Desarrollo de sitios web corporativos y e-commerce en WordPress y WooCommerce.',
     },
     {
       icon: Code,
       title: 'FullStack Developer',
-      description: 'Soluciones completas desde el front-end hasta el back-end.',
+      description:
+        'Desarrollo con React, ASP.NET Core MVC y bases de datos SQL, integrando front-end y back-end.',
     },
   ];
 
@@ -92,6 +102,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050a30]">
         <video
+          ref={heroVideoRef}
           autoPlay
           muted
           loop

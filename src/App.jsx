@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Layout from '@/components/Layout';
 import HomePage from '@/pages/HomePage';
@@ -9,16 +9,13 @@ import VideoEditingPage from '@/pages/VideoEditingPage';
 import ContactPage from '@/pages/ContactPage';
 import ScrollToTop from '@/components/ScrollToTop'; // Asegúrate de que la ruta sea correcta
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
+
   return (
-    <Router>
-      {/* SOLUCIÓN AL SCROLL: Se coloca aquí para que afecte a todas las rutas */}
-      <ScrollToTop /> 
-      
-      <Layout>
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
               path="/"
               element={
                 <motion.div
@@ -83,8 +80,19 @@ function App() {
                 </motion.div>
               }
             />
-          </Routes>
-        </AnimatePresence>
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      {/* SOLUCIÓN AL SCROLL: Se coloca aquí para que afecte a todas las rutas */}
+      <ScrollToTop />
+
+      <Layout>
+        <AnimatedRoutes />
       </Layout>
     </Router>
   );
