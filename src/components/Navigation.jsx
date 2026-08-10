@@ -25,7 +25,7 @@ const Navigation = () => {
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center">
               <img
-                src="img/logo.png"
+                src="img/logo-nav.webp"
                 alt="H.X GALLO"
                 className="h-5 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
               />
