@@ -58,6 +58,12 @@ const HomePage = () => {
       image: '/img/cesar.png',
       text: 'Excelente servicio, profesionalismo y calidez humana.',
     },
+    {
+      name: 'Claudio Gasparotto Vietto',
+      company: 'Oikos Negocios Inmobiliarios',
+      image: '/img/claudio.png',
+      text: 'Desde que administra nuestras redes, mejoramos tanto en imagen como en comunicación. Su trabajo nos ayudó a crecer y a transmitir mejor quiénes somos y lo que hacemos. Destacamos su atención cercana, su compromiso y su profesionalismo. ¡Muy recomendable!',
+    },
   ];
 
   return (
