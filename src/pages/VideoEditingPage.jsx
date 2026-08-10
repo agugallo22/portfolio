@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Instagram, X } from 'lucide-react';
@@ -34,6 +34,25 @@ const videos = [
 
 const VideoEditingPage = () => {
   const [expanded, setExpanded] = useState(null);
+  const cardRefs = useRef({});
+  const modalRef = useRef(null);
+
+  const handleExpand = (v) => {
+    const cardApi = cardRefs.current[v.src];
+    const snapshot = cardApi?.getSnapshot();
+    cardApi?.pause();
+    setExpanded({ ...v, initialTime: snapshot?.currentTime || 0, initialMuted: snapshot?.muted ?? true });
+  };
+
+  const handleClose = () => {
+    const src = expanded?.src;
+    const snapshot = modalRef.current?.getSnapshot();
+    const cardApi = src && cardRefs.current[src];
+    if (cardApi && snapshot) {
+      cardApi.seekAndPlay(snapshot.currentTime, true);
+    }
+    setExpanded(null);
+  };
 
   return (
     <div className="bg-[#050a30] min-h-screen text-white">
@@ -117,9 +136,10 @@ const VideoEditingPage = () => {
                 className="w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
               >
                 <AutoplayVideoCard
+                  ref={(el) => (cardRefs.current[v.src] = el)}
                   src={v.src}
                   label={v.label}
-                  onExpand={() => setExpanded(v)}
+                  onExpand={() => handleExpand(v)}
                 />
               </motion.div>
             ))}
@@ -136,7 +156,7 @@ const VideoEditingPage = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-[#050a30]/90 backdrop-blur-md z-50"
-              onClick={() => setExpanded(null)}
+              onClick={handleClose}
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -146,12 +166,18 @@ const VideoEditingPage = () => {
             >
               <div className="relative w-full max-w-md pointer-events-auto">
                 <button
-                  onClick={() => setExpanded(null)}
+                  onClick={handleClose}
                   className="absolute -top-4 -right-4 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center transition-colors z-10 text-white border border-white/20"
                 >
                   <X size={20} />
                 </button>
-                <AutoplayVideoCard src={expanded.src} label={expanded.label} />
+                <AutoplayVideoCard
+                  ref={modalRef}
+                  src={expanded.src}
+                  label={expanded.label}
+                  initialTime={expanded.initialTime}
+                  initialMuted={expanded.initialMuted}
+                />
               </div>
             </motion.div>
           </>

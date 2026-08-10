@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
@@ -8,6 +8,12 @@ const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const filtersRef = useRef(null);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    filtersRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const categories = ['Todos', 'WordPress', 'Social Media', 'Full Stack', 'Front-end', 'Back-end', 'Analytics'];
 
@@ -383,7 +389,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Filters Section con estilo Liquid Glass */}
-      <section className="sticky top-20 z-30 py-6 bg-[#050a30]/60 backdrop-blur-xl border-y border-white/10">
+      <section ref={filtersRef} className="sticky top-20 z-30 py-6 bg-[#050a30]/60 backdrop-blur-xl border-y border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
@@ -391,7 +397,7 @@ const ProjectsPage = () => {
                 key={category}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
                   selectedCategory === category
                     ? 'bg-blue-600 border-blue-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
