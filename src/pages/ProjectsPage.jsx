@@ -52,6 +52,40 @@ const ProjectsPage = () => {
       ],
     },
     {
+      id: 13,
+      image: 'img/Proyectos/laserlatam1.webp',
+      title: 'Laser LATAM',
+      description:
+        'Landing B2B de una sola página para Laser Alarmas, que vende capacidad de monitoreo de alarmas en la nube a empresas de seguridad de Latinoamérica.',
+      fullDescription:
+        'Laser Alarmas, empresa de seguridad electrónica de Rafaela, ofrece su plataforma de monitoreo de alarmas en la nube como servicio mayorista a empresas de seguridad, instaladores, pymes y barrios privados de Latinoamérica. La web tenía que transmitir seriedad a un público que no los conoce y que ya vio los sitios de la competencia. Me encargué del diseño y del desarrollo front-end: una landing responsive con identidad de marca propia, pensada para llevar al contacto por WhatsApp, con copy en español neutro para toda la región.',
+      category: 'Front-end',
+      role: 'Diseño y desarrollo front-end',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Responsive Design',
+        'Landing de conversión',
+        'CTAs a WhatsApp',
+      ],
+      link: 'https://laserlatam.com',
+      images: [
+        'img/Proyectos/laserlatam2.webp',
+        'img/Proyectos/laserlatam3.webp',
+        'img/Proyectos/laserlatam4.webp',
+        'img/Proyectos/laserlatam5.webp',
+      ],
+      results: [
+        'Relevamiento previo: armé un cuestionario y un documento para el cliente con la información que faltaba (capacidad, precios, contacto, marca y legales), para no inventar datos.',
+        'Estructura de una sola página con navegación por anclas, en lugar de un sitio multipágina: menos mantenimiento y un recorrido directo al contacto.',
+        'Iteración con el equipo del cliente: traduje una reunión en una lista concreta de cambios (reordenar secciones, sumar CTAs de WhatsApp, separar lo institucional de lo comercial y reforzar la confianza con fotos del local, del centro de monitoreo y mockups de las apps).',
+        'Conversión: botón flotante de WhatsApp, CTA al final de cada modelo de negocio y botón "Solicitar demo" en el navbar.',
+        'Identidad de marca propia: tipografía de la marca cargada localmente, imágenes responsive y una grilla de 18 países con banderas locales para que se vea igual en todos los dispositivos.',
+        'Enlace de ida y vuelta con la tienda WooCommerce existente de Laser Alarmas.',
+      ],
+    },
+    {
       id: 3,
       image: 'img/Proyectos/gala-inicio.png',
       title: 'Gala Bakery',
@@ -172,6 +206,7 @@ const ProjectsPage = () => {
         { label: 'Interacciones', value: '18K', detail: '+41%' },
       ],
       media: [
+        { type: 'video', src: 'videos/oikos-lote.mp4' },
         { type: 'video', src: 'videos/oikos-amueblado.mp4' },
         { type: 'video', src: 'videos/oikos-susana-quinta.mp4' },
         { type: 'video', src: 'videos/oikos-venta-menchaca.mp4' },
@@ -180,6 +215,32 @@ const ProjectsPage = () => {
         'Alcancé 1,7 millones de visualizaciones en menos de cinco meses, incrementando este indicador en un 61,7%.',
         'Incrementé el alcance orgánico en un 112,3%, alcanzando 53.700 cuentas, y aumenté las visitas al perfil en un 39,8% (18.700 visitas).',
         'Consolidé la comunidad con 1.200 nuevos seguidores (+45,5%) y 18.000 interacciones (+41%), fortaleciendo la presencia digital de la marca.',
+      ],
+    },
+    {
+      id: 12,
+      title: 'KM Transporte',
+      igHandle: '@km_transporte',
+      igLink: 'https://www.instagram.com/km_transporte/',
+      logo: 'img/logos/km-transporte.png',
+      description: 'Estrategia de contenido, gestión de Instagram y Meta Ads para una empresa de transporte de encomiendas y mudanzas con rutas fijas.',
+      fullDescription:
+        'Gestión integral de la presencia digital de una empresa de transporte de encomiendas, viajes especiales y mudanzas con base en Rafaela y una red de 12 localidades. Planifico el contenido en función de sus salidas semanales (martes y viernes), escribo los guiones de los reels que graban ellos y me ocupo de la edición, la publicación y la parte técnica de la cuenta, con foco en generar consultas directas por WhatsApp.',
+      category: 'Social Media',
+      role: 'Estrategia de contenido, guiones y edición de reels, gestión de Instagram y Meta Ads',
+      period: 'Octubre 2026 – Actualidad',
+      metrics: [],
+      media: [
+        { type: 'image', src: 'img/Proyectos/km-post1.webp' },
+        { type: 'image', src: 'img/Proyectos/km-post2-1.webp' },
+        { type: 'image', src: 'img/Proyectos/km-post2-2.webp' },
+        { type: 'image', src: 'img/Proyectos/km-post3.webp' },
+      ],
+      results: [
+        'Diseñé un calendario mensual de contenidos pensado para sus rutas reales (martes y viernes) y para las 12 localidades de su recorrido.',
+        'Escribo los guiones y edito cada reel con el material que graban ellos, para sostener una presencia constante en Instagram.',
+        'Gestión completa de la cuenta, con respuestas automáticas que derivan las consultas directas a WhatsApp.',
+        'Diseño de la estrategia de Meta Ads en dos líneas: una local para encomiendas y otra nacional para viajes especiales y mudanzas.',
       ],
     },
     {
@@ -193,7 +254,7 @@ const ProjectsPage = () => {
       igHandle: '@pedify.app',
       igLink: 'https://www.instagram.com/pedify.app',
       role: 'Construcción de la estrategia de contenido orgánico desde cero para una startup',
-      period: 'Enero 2026 – Actualidad',
+      period: 'Enero 2026 – Agosto 2026 (7 meses)',
       metrics: [
         { label: 'Visualizaciones', value: '19.6K', detail: '+13.200% desde cero' },
         { label: 'Alcance', value: '3.6K', detail: 'cuentas · +11.800%' },

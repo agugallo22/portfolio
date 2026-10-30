@@ -16,6 +16,8 @@ const featured = {
 };
 
 const videos = [
+  { src: '/videos/oikos-lote.mp4', label: 'Oikos Negocios Inmobiliarios' },
+  { src: '/videos/oikos-lote-nuevo-torino.mp4', label: 'Oikos Negocios Inmobiliarios' },
   { src: '/videos/oikos-amueblado.mp4', label: 'Oikos Negocios Inmobiliarios' },
   { src: '/videos/oikos-susana-quinta.mp4', label: 'Oikos Negocios Inmobiliarios' },
   { src: '/videos/oikos-venta-menchaca.mp4', label: 'Oikos Negocios Inmobiliarios' },

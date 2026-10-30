@@ -27,6 +27,10 @@ const AboutPage = () => {
     { name: 'C#', type: 'dev' },
     { name: '.NET', type: 'dev' },
     { name: 'Node.js', type: 'dev' },
+    { name: 'Arduino', type: 'dev' },
+    { name: 'ESP32', type: 'dev' },
+    { name: 'C++', type: 'dev' },
+    { name: 'APIs REST', type: 'dev' },
     { name: 'SQL', type: 'dev' },
     { name: 'Git', type: 'dev' },
     { name: 'GitHub', type: 'dev' },
@@ -50,6 +54,13 @@ const AboutPage = () => {
   ];
 
   const experience = [
+    {
+      year: 'OCT 2026 - Presente',
+      title: 'Desarrollo de juegos interactivos para activaciones de marketing',
+      company: 'Arduino + ESP32 · Contractor part-time',
+      description:
+        'Desarrollo juegos interactivos con Arduino y ESP32 para activaciones de marketing en eventos, desde el circuito hasta la pantalla, e investigo y propongo nuevos productos. Desarrollé una plataforma de juegos físicos con Arduino, Node.js (serial + WebSocket) y HTML/JavaScript, con arquitectura "un juego, muchas marcas" (cada marca es un archivo de configuración), modo kiosco, panel de operador, estadísticas exportables y funcionamiento 100% offline. También desarrollé un botón inteligente con ESP32 integrado por API REST a un sistema de turnos para un cliente real, diseñado para tolerar fallas de red.',
+    },
     {
       year: 'DIC 2024 - Presente',
       title: 'Fundador y Estratega Digital',
@@ -82,7 +93,14 @@ const AboutPage = () => {
       ),
     },
     {
-      year: 'ENE 2026 - Presente',
+      year: 'OCT 2026 - Presente',
+      title: 'Estrategia de contenido y gestión de redes',
+      company: 'KM Transporte',
+      description:
+        'Gestión integral de la presencia digital de una empresa de transporte de encomiendas, viajes especiales y mudanzas: calendario de contenidos pensado para sus rutas fijas, guiones y edición de reels, gestión de Instagram con respuestas automáticas hacia WhatsApp y estrategia de Meta Ads en dos líneas (local y nacional).',
+    },
+    {
+      year: 'ENE 2026 - AGO 2026',
       title: 'Social Media Manager',
       company: 'Pedify',
       description: (
@@ -216,11 +234,11 @@ const AboutPage = () => {
 
   const education = [
     {
-      year: '2026 - Presente',
+      year: '2026 - En pausa',
       title: 'Licenciatura en Inteligencia Artificial',
       company: 'Universidad Blas Pascal',
       description:
-        'Actualmente cursando la carrera de Licenciatura en Inteligencia Artificial en la Universidad Blas Pascal, con enfoque en aprendizaje automático, procesamiento de lenguaje natural y ética en IA.',
+        'Cursada en pausa por el momento. Carrera con enfoque en aprendizaje automático, procesamiento de lenguaje natural y ética en IA.',
     },
     {
       year: '2023 - 2026',
@@ -368,21 +386,21 @@ const AboutPage = () => {
                   SaaS, entre otros.
                 </p>
                 <p>
-                  Complemento esto con formación técnica: recién graduado
-                  como{' '}
+                  Hoy desarrollo{' '}
+                  <strong className="text-white">
+                    juegos interactivos con Arduino y ESP32
+                  </strong>{' '}
+                  para activaciones de marketing en eventos: combino
+                  electrónica y software (Node.js y JavaScript) para llevar
+                  cada idea del circuito a la pantalla.
+                </p>
+                <p>
+                  Estoy graduado como{' '}
                   <strong className="text-white">
                     Técnico Universitario en Programación
                   </strong>{' '}
-                  en la <strong className="text-white">UTN</strong>, y
-                  actualmente cursando la{' '}
-                  <strong className="text-white">
-                    Licenciatura en Inteligencia Artificial
-                  </strong>{' '}
-                  en la{' '}
-                  <strong className="text-white">
-                    Universidad Blas Pascal
-                  </strong>
-                  .
+                  en la <strong className="text-white">UTN</strong> y{' '}
+                  <strong className="text-white">Técnico en Electrónica</strong>.
                 </p>
                 <p>
                   Además desarrollo sitios web y tiendas online en{' '}

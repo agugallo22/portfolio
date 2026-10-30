@@ -57,7 +57,7 @@ const HomePage = () => {
   ];
 
   const reels = [
-    { src: '/videos/oikos-amueblado.mp4', label: 'Oikos - Inmobiliaria' },
+    { src: '/videos/oikos-lote.mp4', label: 'Oikos - Inmobiliaria' },
     { src: '/videos/hxgallo-laser-alarmas.mp4', label: 'Laser Alarmas - Tienda' },
     { src: '/videos/oikos-venta-menchaca.mp4', label: 'Oikos - Inmobiliaria' },
     { src: '/videos/bigpons-hamburguesa.mp4', label: 'Big Pons - Hamburguesería' },
